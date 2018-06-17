@@ -4,7 +4,6 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
 
 
 // Tasks
@@ -20,20 +19,11 @@ gulp.task('sass', function(){
 });
 
 gulp.task('sass', function(){
-  return gulp.src('development/scss/**/*.scss') //globbing
+  return gulp.src('_sass/**/*.scss') //globbing
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    .pipe(gulp.dest('development/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-});
-
-gulp.task('watch', ['browserSync', 'sass'], function(){
-  gulp.watch('devlopment/scss/**/*.scss', ['sass']);
-  // Other watchers
+    .pipe(gulp.dest('_site/assets'))
 
 });
-
 
 gulp.task('browserSync', function() {
   browserSync.init({
