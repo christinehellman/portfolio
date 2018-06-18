@@ -11,7 +11,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: "SourceSansPro", Sans-Serif;
+  font-family: "SourceSansPro", Sans-Serif;
   color: #111;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
