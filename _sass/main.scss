@@ -1,5 +1,3 @@
----
----
 
 @import "_sass/variables.scss";
 
@@ -19,6 +17,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
+  font: $font-family-base;
   font-family: $font-family-base;
   color: #111;
   background-color: #fdfdfd;
@@ -44,6 +43,7 @@ ul, ol, dl, figure,
 
   p {
     font-weight: 300;
+    font: $font-family-display;
       font-family: $font-family-display;
     }
 
