@@ -11,7 +11,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font-family: "SourceSansPro", Sans-Serif;
+  font-family: "Playfair Display", Serif;
   color: #111;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
@@ -35,7 +35,7 @@ ul, ol, dl, figure,
 
 p {
   font-weight: 300;
-  font-family: "SourceSansPro", Sans-Serif; }
+  font-family: "Source Sans Pro", Sans-Serif; }
 
 /**
  * `main` element
