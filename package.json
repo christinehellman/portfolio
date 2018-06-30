@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/christinehellman/portfolio#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
   },
   "dependencies": {
     "gulp-update": "^0.0.2",
