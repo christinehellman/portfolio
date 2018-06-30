@@ -2,9 +2,11 @@
 
 // Define defaults for each variable.
 
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins');
 
-$base-font-family: 'Abril Fatface', cursive !default;
+
+$font-family-base: 'Poppins', sans-serif;
+$font-family-display: 'Abril Fatface', cursive !default;
 $base-font-size:   16rem !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -61,7 +63,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font-family: $base-font-family;
+  font-family: $font-family-base;
   color: #111;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
@@ -85,8 +87,7 @@ ul, ol, dl, figure,
 
 p {
   font-weight: 300;
-  font: "Source Sans Pro", Sans-Serif;
-  font-family: "Source Sans Pro", Sans-Serif; }
+  font-family: $font-family-base; }
 
 /**
  * `main` element
@@ -126,7 +127,7 @@ li > ol {
  */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
-  font-family: "Playfair Display", Serif; }
+  font-family: $font-family-display; }
 
 /**
  * Links
