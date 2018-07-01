@@ -26,9 +26,9 @@ gulp.task('sass', function(){
 });
 
 gulp.task('sass', function(){
-  return gulp.src('_sass/**/*.scss') //globbing
+  return gulp.src('assets/**/*.css') //globbing
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    .pipe(gulp.dest('assets'))
+    .pipe(gulp.dest('_site/assets'))
 
 });
 
