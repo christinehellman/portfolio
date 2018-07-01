@@ -603,3 +603,9 @@ table td {
   background: blue;
   height: 32rem;
   width: 100%; }
+  .hero .hero-img {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: url("assets/images/hero-graphic.jpg"); }
