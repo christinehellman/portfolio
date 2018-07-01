@@ -2,13 +2,13 @@
 
 // Define defaults for each variable.
 
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins:200');
 
 
 $font-family-base: 'Poppins', sans-serif;
 $font-family-display: 'Abril Fatface', cursive !default;
 $base-font-size:   16rem !default;
-$base-font-weight: 400 !default;
+$base-font-weight: 200 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
 
