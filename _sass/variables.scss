@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins');
-
-
+$font-family-base: 'Poppins', sans-serif;
 $font-family-display: 'Abril Fatface', cursive !default;
-$font-family-base:'Poppins', sans-serif;
 $base-font-size:   16rem !default;
-$base-font-weight: 400 !default;
+$base-font-weight: 200 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
-
-
-
 
 $spacing-unit:     30px !default;
 
@@ -28,7 +22,6 @@ $content-width:    800px !default;
 
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
-
 
 // Use media queries like this:
 // @include media-query($on-palm) {
