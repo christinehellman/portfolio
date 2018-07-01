@@ -8,6 +8,9 @@ dl, dd, ol, ul, figure {
   margin: 0;
   padding: 0; }
 
+header, section, footer, aside, nav, main, article, figure {
+  display: block; }
+
 /**
  * Basic styling
  */
@@ -597,4 +600,6 @@ table td {
   color: #099; }
 
 .hero {
-  background: blue; }
+  background: blue;
+  height: 32rem;
+  width: 100%; }
