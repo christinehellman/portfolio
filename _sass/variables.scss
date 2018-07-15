@@ -23,6 +23,10 @@ $content-width:    800px !default;
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
 
+
+$heading-one-size: 36rem;
+$font-paragraph-size: 1.6rem;
+
 // Use media queries like this:
 // @include media-query($on-palm) {
 //   .wrapper {

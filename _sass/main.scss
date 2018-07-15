@@ -409,6 +409,20 @@ table td {
   .post-content h4 {
     font-size: 18px; } }
 
+
+
+// home page intro
+    .intro {
+      padding: 6rem 0;
+      .intro-header {
+        font-size: $heading-one-size;
+        line-height: 2.4;
+      }
+      .intro-content {
+        font-size: $font-paragraph-size;
+      }
+    }
+
 /**
  * Syntax highlighting styles
  */
