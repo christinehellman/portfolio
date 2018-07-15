@@ -600,6 +600,8 @@ table td {
   color: #099; }
 
 .hero {
+  background: gray;
+  height: 32rem;
   width: 100%;
   display: block;
   position: relative; }
