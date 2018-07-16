@@ -398,6 +398,14 @@ table td {
   .post-content h4 {
     font-size: 18px; } }
 
+.intro {
+  padding: 6rem 0; }
+  .intro .intro-header {
+    font-size: 36rem;
+    line-height: 2.4; }
+  .intro .intro-content {
+    font-size: 1.6rem; }
+
 /**
  * Syntax highlighting styles
  */
