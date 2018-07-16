@@ -613,3 +613,6 @@ table td {
   width: 100%;
   display: block;
   position: relative; }
+
+.intro-background {
+  background: #FFFDFB; }
