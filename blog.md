@@ -5,3 +5,5 @@ permalink: /blog/
 ---
 
 Content coming soon.
+
+{% include blog.html %}
