@@ -1,6 +1,18 @@
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+
+
 $font-family-base: 'Poppins', sans-serif;
 $font-family-display: 'Abril Fatface', cursive !default;
-$base-font-size:   16rem !default;
+$base-font-size: 16px !default;
 $base-font-weight: 200 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
@@ -42,6 +54,6 @@ $bg-one: #FFFDFB;
   }
 }
 
-@mixin relative-font-size($ratio) {
+/*@mixin relative-font-size($ratio) {
   font-size: $base-font-size * $ratio;
-}
+}*/

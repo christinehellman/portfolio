@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins:200');
 @import 'variables';
+@import 'global-mixins';
 
 
 
@@ -50,7 +51,9 @@ ul, ol, dl, figure,
 
 p {
   font-weight: 300;
-  font-family: $font-family-base; }
+  font-family: $font-family-base;
+  @include fontSize($base-font-size);
+}
 
 /**
  * `main` element
