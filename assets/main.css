@@ -209,7 +209,10 @@ table td {
   border-top: 5px solid #424242;
   border-bottom: 1px solid #e8e8e8;
   min-height: 55.95px;
-  position: relative; }
+  position: fixed;
+  width: 100%;
+  background: #ffffff;
+  z-index: 10000; }
 
 .site-title {
   font-size: 26px;
