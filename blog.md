@@ -1,9 +1,9 @@
 ---
-layout: blog
+layout: home
 title: Blog
 permalink: /blog/
 ---
 
 Content coming soon.
 
-{% include blog.html %}
+{% include index.html %}
