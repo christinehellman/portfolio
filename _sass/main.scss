@@ -514,6 +514,16 @@ p,
       @include rem('padding-right', $global-padding-horizontal);
     }
   }
+
+  .hp-mockup-1,
+  .hp-mockup-2,
+  .hp-mockup-3 {
+    width: 50%;
+
+    @media screen and (min-width: 800px) {
+      width: 100%;
+    }
+  }
 }
 
 .contact {

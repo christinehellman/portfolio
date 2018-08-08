@@ -438,6 +438,15 @@ p,
       border-right: 0.3rem solid #9139da;
       padding-right: calc(15px * 2);
       padding-right: calc(15px * 2); }
+  .projects .hp-mockup-1,
+  .projects .hp-mockup-2,
+  .projects .hp-mockup-3 {
+    width: 50%; }
+    @media screen and (min-width: 800px) {
+      .projects .hp-mockup-1,
+      .projects .hp-mockup-2,
+      .projects .hp-mockup-3 {
+        width: 100%; } }
 
 .contact .hide,
 .contact .cloak div,
