@@ -108,14 +108,18 @@ main {
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
-  padding-left: 30px; }
+  padding-left: 30px;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right); }
 
 @media screen and (max-width: 800px) {
   .wrapper {
     max-width: -webkit-calc(800px - (30px));
     max-width: calc(800px - (30px));
     padding-right: 3rem;
-    padding-left: 3rem; } }
+    padding-left: 3rem;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right); } }
 
 /**
  * Clearfix
