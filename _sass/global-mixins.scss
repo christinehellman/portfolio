@@ -1,0 +1,127 @@
+// Rem Conversion
+
+@mixin rem($property, $px-values) {
+  // Convert the baseline into rems
+
+  $baseline-rem: $base-font-size / 1rem * 1;
+
+  // Print the first line in pixel values
+
+  #{$property}: $px-values;
+
+  // If there is only one (numeric) value, return the property/value line for it.
+
+  @if type-of($px-values) == 'number' {
+    #{$property}: $px-values / $baseline-rem;
+  } @else {
+    // Create an empty list that we can dump values into
+
+    $rem-values: ();
+
+    @each $value in $px-values {
+      // If the value is zero or not a number, return it
+
+      @if $value == 0 or type-of($value) != 'number' {
+        $rem-values: append($rem-values, $value);
+      } @else {
+        $rem-values: append($rem-values, $value / $baseline-rem);
+      }
+    }
+
+    // Return the property and its list of converted values
+    #{$property}: $rem-values;
+  }
+}
+
+@mixin typography {
+  h1 {
+    @include rem('font-size', $heading-one-size);
+  }
+  h2 {
+    font-family: $font-family-base;
+    @include rem('font-size', $heading-two-size);
+    font-weight: 300;
+  }
+  h3 {
+    font-family: $font-family-base;
+    @include rem('font-size', $heading-three-size);
+  }
+  h4,
+  label {
+    font-family: $font-family-base;
+    @include rem('font-size', $heading-four-size);
+  }
+  p,
+  font-paragraph-size ul,
+  li {
+    font-family: $font-family-base;
+    @include rem('font-size', $font-paragraph-size);
+    font-weight: 300;
+  }
+  a {
+    font-family: $font-family-base;
+    @include rem('font-size', $font-paragraph-size);
+  }
+  figcaption {
+    @include rem('font-size', $small-font-size);
+  }
+}
+
+// Transitions/animations/etc
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+// Buttons
+@mixin buttons() {
+  @include transition(all 0.1s ease-in);
+  @include rem('font-size', $base-font-size);
+  font-family: $font-family-base;
+  font-weight: $base-font-weight;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 300px;
+  max-width: 30rem;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  white-space: normal;
+}
+
+@mixin btn-primary() {
+  color: $btn-primary-color;
+  background: $btn-primary-bg;
+  border: $btn-primary-border;
+  @include rem('font-size', $font-paragraph-size);
+
+  &:hover {
+    color: $btn-primary-hover-color;
+    background: $btn-primary-hover-bg;
+    border: $btn-primary-hover-border;
+  }
+}
+
+// Padding
+
+@mixin global-padding() {
+  @include rem('padding', $global-padding-vertical, $global-padding-horizontal);
+}
+
+// Layouts
+@mixin grid-50() {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem 3rem;
+  min-width: 0;
+}

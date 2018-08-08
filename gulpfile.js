@@ -6,6 +6,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 
+
 // Tasks
 
 gulp.task('task-name', function() {
@@ -27,16 +28,10 @@ gulp.task('sass', function(){
 
 
 
-gulp.task('browserSync', function() {
-  browserSync.init({
-    server: {
-      baseDir: '_site'
-    },
-  })
-})
+
 
 
 gulp.task('watch', function(){
-  gulp.watch('_sass/scss/**/*.scss', ['sass']); 
+  gulp.watch('_sass/scss/**/*.scss', ['sass']);
   // Other watchers
 })

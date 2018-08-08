@@ -1,45 +1,83 @@
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return #{$remSize}rem;
-}
+// mixins for fonts, needed here
 
-@mixin fontSize($size) {
-  font-size: $size; //Fallback in px
-  font-size: calculateRem($size);
-}
+// Colors
 
+$brand-primary: #9139da;
+$brand-secondary: #c46bef;
 
+// Backgrounds
+$bg-light: #fdfdfd;
+$bg-medium: #fdfdfd;
+$bg-dark: #f5f5f5;
+
+// Typography
+
+$heading-one-size: 36px;
+$heading-two-size: 24px;
+$heading-three-size: 18px;
+$heading-four-size: 16px;
+$font-paragraph-size: 16px;
+
+// Buttons
+
+$btn-primary-color: $brand-primary;
+$btn-primary-bg: transparent;
+$btn-primary-border: 0.1rem solid $brand-primary;
+
+$btn-primary-hover-color: #ffffff;
+$btn-primary-hover-bg: $brand-secondary;
+$btn-primary-hover-border: 0.1rem solid $brand-secondary;
+
+/*$btn-secondary-color:;
+$btn-secondary-bg:;
+$btn-secondary-border:;
+
+$btn-secondary-hover-color:;
+$btn-secondary-hover-bg:;
+$btn-secondary-hover-border:;
+
+$btn-tertiary-color:;
+$btn-tertiary-bg:;
+$btn-tertiary-border:;
+
+$btn-tertiary-hover-color:;
+$btn-tertiary-hover-bg:;
+$btn-tertiary-hover-border:;*/
 
 $font-family-base: 'Poppins', sans-serif;
 $font-family-display: 'Abril Fatface', cursive !default;
-$base-font-size: 16px !default;
+$base-font-size: 10px !default;
 $base-font-weight: 200 !default;
-$small-font-size:  $base-font-size * 0.875 !default;
+$small-font-size: $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
+$line-height-unit: ($base-line-height * 10) + px;
 
-$spacing-unit:     30px !default;
+$spacing-unit: 30px !default;
 
-$text-color:       #111 !default;
+$text-color: #261b2c !default;
 $background-color: #fdfdfd !default;
-$brand-color:      #2a7ae2 !default;
+$brand-color: $brand-primary !default;
 
-$grey-color:       #828282 !default;
+$grey-color: #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
+$grey-color-dark: darken($grey-color, 25%) !default;
 
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width:    800px !default;
+$content-width: 800px !default;
 
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
+$on-palm: 600px !default;
+$on-laptop: 800px !default;
 
+$bg-one: #fffdfb;
 
-$heading-one-size: 3.6rem;
-$font-paragraph-size: 1.6rem;
+// Padding
+$global-padding-horizontal: calc(#{$line-height-unit} * 2);
+$global-padding-vertical: calc(#{$line-height-unit} * 4);
 
-$bg-one: #FFFDFB;
+$article-content-padding: 50px;
+$article-content-padding-large: $article-content-padding * 2;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -53,7 +91,3 @@ $bg-one: #FFFDFB;
     @content;
   }
 }
-
-/*@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
-}*/

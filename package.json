@@ -17,12 +17,13 @@
   },
   "homepage": "https://github.com/christinehellman/portfolio#readme",
   "devDependencies": {
-    "browser-sync": "^2.24.5",
+    "browser-sync": "^2.24.6",
     "gulp": "^3.9.1",
     "gulp-sass": "^4.0.1"
   },
   "dependencies": {
     "gulp-update": "^0.0.2",
-    "npm": "^6.2.0"
+    "npm": "^6.2.0",
+    "rellax": "^1.6.2"
   }
 }
