@@ -107,19 +107,19 @@ main {
   max-width: calc(800px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
-  padding-right: 30px;
-  padding-left: 30px;
   padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right); }
+  padding-right: env(safe-area-inset-right);
+  padding-right: calc(15px * 2);
+  padding-left: calc(15px * 2); }
 
 @media screen and (max-width: 800px) {
   .wrapper {
     max-width: -webkit-calc(800px - (30px));
     max-width: calc(800px - (30px));
-    padding-right: 3rem;
-    padding-left: 3rem;
     padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right); } }
+    padding-right: env(safe-area-inset-right);
+    padding-right: calc(15px * 2);
+    padding-left: calc(15px * 2); } }
 
 /**
  * Clearfix
@@ -434,6 +434,12 @@ p,
   .projects .intro-content {
     padding-left: 3rem;
     border-left: 0.3rem solid #9139da; }
+  .projects div[class^='hp-mockup'] {
+    width: 70%;
+    justify-self: end; }
+    @media screen and (min-width: 800px) {
+      .projects div[class^='hp-mockup'] {
+        width: 100%; } }
   .projects:nth-child(odd) {
     text-align: right; }
     .projects:nth-child(odd) .intro-content {
@@ -442,15 +448,8 @@ p,
       border-right: 0.3rem solid #9139da;
       padding-right: calc(15px * 2);
       padding-right: calc(15px * 2); }
-  .projects .hp-mockup-1,
-  .projects .hp-mockup-2,
-  .projects .hp-mockup-3 {
-    width: 50%; }
-    @media screen and (min-width: 800px) {
-      .projects .hp-mockup-1,
-      .projects .hp-mockup-2,
-      .projects .hp-mockup-3 {
-        width: 100%; } }
+    .projects:nth-child(odd) div[class^='hp-mockup'] {
+      justify-self: start; }
 
 .contact .hide,
 .contact .cloak div,

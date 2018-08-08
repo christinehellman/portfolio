@@ -102,20 +102,20 @@ main {
   max-width: calc(800px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
-  padding-right: 30px;
-  padding-left: 30px;
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
+  padding-right: $global-padding-horizontal;
+  padding-left: $global-padding-horizontal;
 }
 
 @media screen and (max-width: 800px) {
   .wrapper {
     max-width: -webkit-calc(800px - (30px));
     max-width: calc(800px - (30px));
-    padding-right: 3rem;
-    padding-left: 3rem;
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
+    padding-right: $global-padding-horizontal;
+    padding-left: $global-padding-horizontal;
   }
 }
 
@@ -508,7 +508,14 @@ p,
     padding-left: 3rem;
     border-left: 0.3rem solid $brand-primary;
   }
+  div[class^='hp-mockup'] {
+    width: 70%;
+    justify-self: end;
 
+    @media screen and (min-width: 800px) {
+      width: 100%;
+    }
+  }
   &:nth-child(odd) {
     text-align: right;
     .intro-content {
@@ -517,15 +524,8 @@ p,
       border-right: 0.3rem solid $brand-primary;
       @include rem('padding-right', $global-padding-horizontal);
     }
-  }
-
-  .hp-mockup-1,
-  .hp-mockup-2,
-  .hp-mockup-3 {
-    width: 50%;
-
-    @media screen and (min-width: 800px) {
-      width: 100%;
+    div[class^='hp-mockup'] {
+      justify-self: start;
     }
   }
 }
