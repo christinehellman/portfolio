@@ -35,7 +35,9 @@
 
 @mixin typography {
   h1 {
+    font-family: $font-family-display;
     @include rem('font-size', $heading-one-size);
+    @include rem('padding', $global-padding-vertical 0);
   }
   h2 {
     font-family: $font-family-base;

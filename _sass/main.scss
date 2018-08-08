@@ -190,9 +190,6 @@ li > ol {
   margin-bottom: 0;
 }
 
-li {
-  @include rem('padding-bottom', $line-height-unit);
-}
 // s03.02 – Other typography
 p.small {
   color: $brand-primary;
@@ -395,42 +392,13 @@ button {
   //@include btn-tertiary;
 }
 
-//------------------------------------------
-//  s05.00 – Forms
-//------------------------------------------
-
-.contact {
-  label,
-  input {
-    display: block;
-  }
-  input {
-    width: 100%;
-    padding: $line-height-unit;
-
-    @media screen and (min-width: 800px) {
-      width: 50%;
-    }
-  }
-
-  .error {
-    border-color: red;
-  }
-
-  .error-message {
-    color: red;
-    font-style: italic;
-    margin-bottom: 1em;
-  }
-}
-
-.intro-header,
 .post-title,
 .post-header {
   font-weight: 400;
   font-family: $font-family-display;
   @include rem('padding', $global-padding-horizontal 0);
 }
+
 .post-list > li {
   margin-bottom: 30px;
 }
@@ -456,6 +424,12 @@ button {
   position: relative;
 }
 
+.lede,
+p,
+.header {
+  @include rem('padding-bottom', $line-height-unit);
+}
+
 // padding for groups of text
 .section-inner {
   @include rem('padding-bottom', #{$line-height-unit});
@@ -466,7 +440,7 @@ button {
 }
 
 .intro-hero {
-  @include rem('padding', $article-content-padding-large);
+  @include rem('padding', $article-content-padding-large 0);
 }
 
 // HP Sections
@@ -529,6 +503,16 @@ button {
   .intro-content {
     padding-left: 3rem;
     border-left: 0.3rem solid $brand-primary;
+  }
+
+  &:nth-child(odd) {
+    text-align: right;
+    .intro-content {
+      padding-left: 0;
+      border-left: 0;
+      border-right: 0.3rem solid $brand-primary;
+      @include rem('padding-right', $global-padding-horizontal);
+    }
   }
 }
 
