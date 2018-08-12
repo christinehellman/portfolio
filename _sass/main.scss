@@ -467,7 +467,7 @@ p,
     }
   }
 
-  &:nth-child(even) {
+  &:nth-child(odd) {
     text-align: right;
     .intro-content {
       padding-left: 0rem;
