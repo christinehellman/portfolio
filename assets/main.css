@@ -64,7 +64,8 @@ body {
   -moz-font-feature-settings: 'kern' 1;
   -o-font-feature-settings: 'kern' 1;
   font-feature-settings: 'kern' 1;
-  font-kerning: normal; }
+  font-kerning: normal;
+  scroll-behavior: smooth; }
   body h1 {
     font-family: "Abril Fatface", cursive;
     font-size: 36px;
@@ -224,7 +225,7 @@ blockquote > :last-child {
 .site-nav .page-link {
   color: #261b2c;
   line-height: 1.5; }
-  .site-nav .page-link:hover {
+  .site-nav .page-link:hover, .site-nav .page-link:active {
     color: #9139da;
     cursor: pointer; }
 
@@ -232,7 +233,7 @@ blockquote > :last-child {
   background: #fff; }
   .site-footer .social-icon svg {
     fill: #9139da; }
-    .site-footer .social-icon svg:hover {
+    .site-footer .social-icon svg:hover, .site-footer .social-icon svg:active {
       fill: #c46bef; }
   .site-footer .skills {
     border-top: 1px solid #e8e8e8;
@@ -380,10 +381,10 @@ p,
     -o-transition: all ease 0.2s;
     -webkit-transition: all ease 0.2s;
     transition: all ease 0.2s; }
-  .page-link:hover {
+  .page-link:hover, .page-link:active {
     color: #c46bef;
     text-decoration: none; }
-    .page-link:hover:after {
+    .page-link:hover:after, .page-link:active:after {
       left: 0;
       right: 0;
       height: 2px; }
