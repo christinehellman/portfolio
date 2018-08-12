@@ -64,8 +64,7 @@ body {
   -moz-font-feature-settings: 'kern' 1;
   -o-font-feature-settings: 'kern' 1;
   font-feature-settings: 'kern' 1;
-  font-kerning: normal;
-  scroll-behavior: smooth; }
+  font-kerning: normal; }
   body h1 {
     font-family: "Abril Fatface", cursive;
     font-size: 36px;
@@ -224,10 +223,10 @@ blockquote > :last-child {
 
 .site-nav .page-link {
   color: #261b2c;
-  line-height: 1.5; }
+  line-height: 1.5;
+  cursor: pointer; }
   .site-nav .page-link:hover, .site-nav .page-link:active {
-    color: #9139da;
-    cursor: pointer; }
+    color: #9139da; }
 
 .site-footer {
   background: #fff; }
@@ -402,9 +401,9 @@ p,
     box-shadow: 14px 16px 50px 0 rgba(38, 27, 44, 0.1); }
     .projects .hp-mockup:nth-child(odd) {
       box-shadow: -14px 16px 50px 0 rgba(38, 27, 44, 0.1); }
-  .projects:nth-child(even) {
+  .projects:nth-child(odd) {
     text-align: right; }
-    .projects:nth-child(even) .intro-content {
+    .projects:nth-child(odd) .intro-content {
       padding-left: 0rem;
       padding-right: 3rem;
       border-left: 0;
