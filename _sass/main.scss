@@ -59,6 +59,7 @@ ul,
 figure {
   margin: 0;
   padding: 0;
+  @include rem('padding-bottom', $line-height-unit);
 }
 
 header,
@@ -100,6 +101,7 @@ main {
 .wrapper {
   max-width: -webkit-calc(800px - (30px * 2));
   max-width: calc(800px - (30px * 2));
+
   margin-right: auto;
   margin-left: auto;
   padding-left: env(safe-area-inset-left);
@@ -225,36 +227,30 @@ blockquote > :last-child {
   min-height: 55.95px;
   position: fixed;
   width: 100%;
-  background: #ffffff;
+  background: #fff;
   z-index: 10000;
 }
 
 .site-title {
   @include rem('font-size', $heading-two-size);
   font-weight: 300;
-  line-height: $base-line-height;
+  line-height: 55.95px;
   letter-spacing: -1px;
   margin-bottom: 0;
-  float: left;
+  text-align: left;
 }
 
 .site-title,
 .site-title:visited {
   color: #424242;
-  line-height: 54px;
 }
 
 .site-nav {
-  float: right;
-  line-height: 54px;
-}
-
-.site-nav .nav-trigger {
-  display: none;
-}
-
-.site-nav .menu-icon {
-  display: none;
+  line-height: $line-height-unit;
+  @include rem('padding-top', $article-content-padding);
+  a {
+    @include rem('margin-right', $line-height-unit);
+  }
 }
 
 .site-nav .page-link {
@@ -263,78 +259,27 @@ blockquote > :last-child {
 
   &:hover {
     color: $brand-primary;
-  }
-}
-
-.site-nav .page-link:not(:last-child) {
-  margin-right: 20px;
-}
-
-@media screen and (max-width: 600px) {
-  .site-nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    background-color: #fdfdfd;
-    text-align: right;
-  }
-  .site-nav label[for='nav-trigger'] {
-    display: block;
-    float: right;
-    width: 100px;
-    height: 100%;
-    z-index: 2;
     cursor: pointer;
-  }
-  .site-nav .menu-icon {
-    width: 100%;
-    height: 100%;
-    line-height: 0;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .site-nav .menu-icon > svg {
-    fill: #424242;
-  }
-  .site-nav input ~ .trigger {
-    clear: both;
-    display: none;
-  }
-  .site-nav input:checked ~ .trigger {
-    display: block;
-    padding-bottom: 5px;
-    background: #fff;
-  }
-  .site-nav .page-link {
-    display: block;
-    padding: 5px 10px;
-    text-align: right;
-  }
-  .site-nav .page-link:not(:last-child) {
-    margin-right: 0;
-  }
-
-  .site-nav {
-    &:hover {
-      background: #c46bef;
-      @include transition(all 0.1s ease-in);
-    }
   }
 }
 
 //  s04.02 Footer
 .site-footer {
-  border-top: 1px solid #e8e8e8;
-  padding: 30px 0;
-  background: $bg-dark;
+  background: #fff;
+
   .social-icon svg {
     fill: $brand-primary;
     &:hover {
       fill: $brand-secondary;
     }
+  }
+  .skills {
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    background: $bg-dark;
+  }
+  .footer-bottom {
+    @include rem('padding-top', 200px);
   }
 }
 
@@ -441,6 +386,7 @@ p,
 
 .grid-50 {
   @include grid-50;
+  @include rem('padding-bottom', 200px);
 }
 
 .intro-hero {
@@ -508,24 +454,23 @@ p,
     padding-left: 3rem;
     border-left: 0.3rem solid $brand-primary;
   }
-  div[class^='hp-mockup'] {
-    width: 70%;
-    justify-self: end;
-
-    @media screen and (min-width: 800px) {
-      width: 100%;
+  .hp-mockup {
+    @include rem('height', 430px);
+    background: #f5f5f5;
+    border: 5px solid #f5f5f5;
+    box-shadow: 14px 16px 50px 0 rgba(38, 27, 44, 0.1);
+    &:nth-child(odd) {
+      box-shadow: -14px 16px 50px 0 rgba(38, 27, 44, 0.1);
     }
   }
-  &:nth-child(odd) {
+
+  &:nth-child(even) {
     text-align: right;
     .intro-content {
-      padding-left: 0;
+      padding-left: 0rem;
+      padding-right: 3rem;
       border-left: 0;
       border-right: 0.3rem solid $brand-primary;
-      @include rem('padding-right', $global-padding-horizontal);
-    }
-    div[class^='hp-mockup'] {
-      justify-self: start;
     }
   }
 }
