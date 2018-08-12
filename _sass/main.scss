@@ -422,11 +422,13 @@ p,
   }
 }
 
-.page-link {
+.page-link,
+.site-title {
   color: $brand-primary;
   position: relative;
   transition: all 0.2s ease;
   text-transform: lowercase;
+  cursor: pointer;
 
   &:after {
     content: '';
@@ -454,11 +456,16 @@ p,
   background: $bg-medium;
 
   .intro-content {
-    padding-left: 3rem;
-    border-left: 0.3rem solid $brand-primary;
+    padding-right: 3rem;
+    border-right: 0.3rem solid $brand-primary;
+  }
+  .article-inner {
+    text-align: right;
   }
   .hp-mockup {
     @include rem('height', 430px);
+    z-index: 2000;
+    position: relative;
     background: #f5f5f5;
     border: 5px solid #f5f5f5;
     box-shadow: 14px 16px 50px 0 rgba(38, 27, 44, 0.1);
@@ -468,26 +475,15 @@ p,
   }
 
   &:nth-child(odd) {
-    text-align: right;
-    .intro-content {
-      padding-left: 0rem;
-      padding-right: 3rem;
-      border-left: 0;
-      border-right: 0.3rem solid $brand-primary;
+    .article-inner {
+      text-align: left;
     }
-  }
-}
-
-.contact {
-  .hide,
-  .cloak div,
-  .cloak span,
-  .likert.cloak tbody,
-  .likert.cloak thead {
-    display: none !important;
-  }
-  .likert.cloak table {
-    border: none;
+    .intro-content {
+      padding-right: 0;
+      border-right: 0;
+      padding-left: 3rem;
+      border-left: 0.3rem solid $brand-primary;
+    }
   }
 }
 
@@ -526,4 +522,87 @@ p,
 .internal-page,
 .page-content {
   overflow: hidden;
+}
+
+div[class^='coffee-bean'] {
+  position: relative;
+  display: block;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  img {
+    max-width: none;
+    position: absolute;
+  }
+}
+.dogwood {
+  height: 100%;
+  position: relative;
+  display: block;
+  @media screen and (min-width: 590px) {
+    //top: -15%;
+  }
+}
+
+svg.coffee-bean-1 {
+  position: absolute;
+  right: 0;
+  width: 20%;
+  height: auto;
+  top: -20%;
+  z-index: 20;
+}
+svg.dogwood {
+  @include rem('min-width', 500px);
+  @include rem('height', 500px);
+  position: relative;
+  z-index: 10;
+  min-height: 100%;
+  width: 100%;
+}
+
+.coffee-bean-2 img {
+  right: -10rem;
+  top: 15rem;
+}
+
+.coffee-bean-3 img {
+  top: 30rem;
+}
+
+.coffee-bean-4 img {
+  top: 45rem;
+  right: -5rem;
+}
+
+.coffee-bean-5 img {
+  top: 60rem;
+}
+
+.coffee-bean-6 img {
+  top: 75rem;
+  left: 10rem;
+}
+
+.projects {
+  .coffee-bean-2 img {
+    top: -10rem;
+    left: 10rem;
+  }
+
+  .coffee-bean-3 img {
+    top: 10rem;
+    left: 0;
+  }
+
+  .coffee-bean-5 img {
+    top: 20rem;
+    left: 10rem;
+  }
+
+  .coffee-bean-6 img {
+    top: 40rem;
+    left: 10rem;
+  }
 }
