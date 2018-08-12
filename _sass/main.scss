@@ -257,7 +257,8 @@ blockquote > :last-child {
   color: $text-color;
   line-height: 1.5;
 
-  &:hover {
+  &:hover,
+  &:active {
     color: $brand-primary;
     cursor: pointer;
   }
@@ -269,7 +270,8 @@ blockquote > :last-child {
 
   .social-icon svg {
     fill: $brand-primary;
-    &:hover {
+    &:hover,
+    &:active {
       fill: $brand-secondary;
     }
   }
@@ -436,7 +438,8 @@ p,
     background: $brand-secondary; // system color
     @include transition(all ease 0.2s);
   }
-  &:hover {
+  &:hover,
+  &:active {
     color: $brand-secondary;
     text-decoration: none;
     &:after {
