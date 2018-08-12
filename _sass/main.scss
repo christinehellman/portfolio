@@ -91,7 +91,6 @@ body {
   font-feature-settings: 'kern' 1;
   font-kerning: normal;
   @include typography;
-  scroll-behavior: smooth;
 }
 
 main {
@@ -257,11 +256,11 @@ blockquote > :last-child {
 .site-nav .page-link {
   color: $text-color;
   line-height: 1.5;
+  cursor: pointer;
 
   &:hover,
   &:active {
     color: $brand-primary;
-    cursor: pointer;
   }
 }
 

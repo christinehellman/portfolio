@@ -12,22 +12,12 @@ const sections = document.querySelectorAll('.js-section');
 btns[0].addEventListener('click', () => {
   scrollIt(sections[0]);
 });
-btns[0].addEventListener('touchstart', () => {
-  scrollIt(sections[0]);
-});
 
 btns[1].addEventListener('click', () => {
   scrollIt(sections[1]);
 });
-btns[1].addEventListener('touchstart', () => {
-  scrollIt(sections[1]);
-});
 
 btns[2].addEventListener('click', () => {
-  scrollIt(sections[2]);
-});
-
-btns[2].addEventListener('touchstart', () => {
   scrollIt(sections[2]);
 });
 
