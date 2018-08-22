@@ -282,6 +282,8 @@ blockquote > :last-child {
   }
   .footer-bottom {
     @include rem('padding-top', 200px);
+    @include rem('padding-bottom', 100px);
+    @include grid-50;
   }
 }
 
@@ -367,7 +369,7 @@ button {
 // ------------------------------------------
 // s02.00
 // ------------------------------------------
-// overall padding on article sections
+// overall padding
 .article-inner,
 .page-content,
 .projects {
@@ -386,13 +388,8 @@ p,
   @include rem('padding-bottom', #{$line-height-unit});
 }
 
-.grid-50 {
-  @include grid-50;
+.projects {
   @include rem('padding-bottom', 200px);
-}
-
-.intro-hero {
-  @include rem('padding', $article-content-padding-large 0);
 }
 
 // HP Sections
@@ -411,9 +408,11 @@ p,
 }
 
 // home page intro
-.intro {
+.intro-hero {
   background: $bg-light;
-  overflow: hidden;
+  article {
+    @include grid-50;
+  }
   .intro-header {
     font-size: $heading-one-size;
   }
@@ -454,6 +453,9 @@ p,
 
 .projects {
   background: $bg-medium;
+  article {
+    @include grid-50;
+  }
 
   .intro-content {
     padding-right: 3rem;
@@ -469,12 +471,12 @@ p,
     background: #f5f5f5;
     border: 5px solid #f5f5f5;
     box-shadow: 14px 16px 50px 0 rgba(38, 27, 44, 0.1);
-    &:nth-child(odd) {
-      box-shadow: -14px 16px 50px 0 rgba(38, 27, 44, 0.1);
-    }
   }
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
+    .hp-mockup {
+      box-shadow: -14px 16px 50px 0 rgba(38, 27, 44, 0.1);
+    }
     .article-inner {
       text-align: left;
     }
@@ -544,15 +546,6 @@ div[class^='coffee-bean'] {
     //top: -15%;
   }
 }
-
-svg.coffee-bean-1 {
-  position: absolute;
-  right: 0;
-  width: 20%;
-  height: auto;
-  top: -20%;
-  z-index: 20;
-}
 svg.dogwood {
   @include rem('min-width', 500px);
   @include rem('height', 500px);
@@ -562,47 +555,53 @@ svg.dogwood {
   width: 100%;
 }
 
+.coffee-bean-1 img {
+  right: 0;
+  @include rem('top', -50px);
+}
+
 .coffee-bean-2 img {
-  right: -10rem;
-  top: 15rem;
+  @include rem('right', -100px);
+  @include rem('top', 150px);
+  //right: -10rem;
+  //  top: 15rem;
 }
 
 .coffee-bean-3 img {
-  top: 30rem;
+  @include rem('top', 300px);
+  //top: 30rem;
 }
 
 .coffee-bean-4 img {
-  top: 45rem;
-  right: -5rem;
+  //top: 45rem;
+  //right: -5rem;
+  @include rem('top', 450px);
+  @include rem('right', -50px);
 }
 
 .coffee-bean-5 img {
-  top: 60rem;
-}
-
-.coffee-bean-6 img {
-  top: 75rem;
-  left: 10rem;
+  //top: 60rem;
+  @include rem('top', 600px);
 }
 
 .projects {
   .coffee-bean-2 img {
-    top: -10rem;
-    left: 10rem;
+    //top: -10rem;
+    //left: 10rem;
+    @include rem('top', -100px);
+    @include rem('left', 100px);
   }
 
   .coffee-bean-3 img {
-    top: 10rem;
+    //top: 10rem;
     left: 0;
+    @include rem('top', 100px);
   }
 
   .coffee-bean-5 img {
-    top: 20rem;
-    left: 10rem;
-  }
-
-  .coffee-bean-6 img {
-    top: 40rem;
-    left: 10rem;
+    //top: 20rem;
+    //left: 10rem;
+    @include rem('top', 200px);
+    @include rem('left', 100px);
   }
 }
