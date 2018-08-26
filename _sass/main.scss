@@ -306,11 +306,6 @@ dl dd {
   text-align: left;
 }
 
-.site-title,
-.site-title:visited {
-  color: #424242;
-}
-
 .site-nav {
   line-height: $line-height-unit;
   @include rem('padding-top', $article-content-padding);
@@ -319,15 +314,17 @@ dl dd {
   }
 }
 
-.site-nav .page-link {
+/*.site-nav .page-link {
   color: $text-color;
   line-height: 1.5;
 
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     color: $brand-primary;
+    background: transparent;
   }
-}
+}*/
 
 //  s04.02 Footer
 .site-footer {
@@ -336,7 +333,8 @@ dl dd {
   .social-icon svg {
     fill: $brand-primary;
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
       fill: $brand-secondary;
     }
   }
@@ -376,6 +374,7 @@ a {
   &:focus {
     color: $brand-primary;
     text-decoration: underline;
+    background: transparent;
   }
   &:visted {
     color: #1756a9;

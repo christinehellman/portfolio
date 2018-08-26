@@ -265,10 +265,6 @@ dl dd {
   margin-bottom: 0;
   text-align: left; }
 
-.site-title,
-.site-title:visited {
-  color: #424242; }
-
 .site-nav {
   line-height: 15px;
   padding-top: 50px;
@@ -277,17 +273,22 @@ dl dd {
     margin-right: 15px;
     margin-right: 15px; }
 
-.site-nav .page-link {
-  color: #261b2c;
-  line-height: 1.5; }
-  .site-nav .page-link:hover, .site-nav .page-link:active {
-    color: #9139da; }
+/*.site-nav .page-link {
+  color: $text-color;
+  line-height: 1.5;
 
+  &:hover,
+  &:active,
+  &:focus {
+    color: $brand-primary;
+    background: transparent;
+  }
+}*/
 .site-footer {
   background: #fff; }
   .site-footer .social-icon svg {
     fill: #9139da; }
-    .site-footer .social-icon svg:hover, .site-footer .social-icon svg:active {
+    .site-footer .social-icon svg:hover, .site-footer .social-icon svg:active, .site-footer .social-icon svg:focus {
       fill: #c46bef; }
   .site-footer .skills {
     border-top: 1px solid #e8e8e8;
@@ -317,7 +318,8 @@ a {
     text-decoration: underline; }
   a:active, a:focus {
     color: #9139da;
-    text-decoration: underline; }
+    text-decoration: underline;
+    background: transparent; }
   a:visted {
     color: #1756a9; }
 
