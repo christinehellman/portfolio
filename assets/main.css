@@ -420,7 +420,8 @@ button {
       background: #c46bef; }
 
 .intro-hero {
-  background: #fdfdfd; }
+  background: #fdfdfd;
+  overflow: hidden; }
   .intro-hero .intro-hero-header {
     padding: calc(15px * 2) 0;
     padding: calc(15px * 2) 0; }
@@ -573,7 +574,6 @@ svg.dogwood {
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); } }
 
 .grid-item {
-  cursor: pointer;
   position: relative;
   width: 100%;
   height: 430px;
@@ -587,7 +587,6 @@ svg.dogwood {
   overflow: hidden; }
   .grid-item .middle {
     opacity: 0;
-    cursor: pointer;
     position: absolute;
     opacity: 0;
     bottom: 0;
@@ -608,16 +607,16 @@ svg.dogwood {
     text-transform: uppercase;
     position: relative;
     width: 100%; }
-  .grid-item:hover img {
+  .grid-item:hover img, .grid-item:active img, .grid-item:focus img {
     opacity: 0.1; }
-  .grid-item:hover .middle {
+  .grid-item:hover .middle, .grid-item:active .middle, .grid-item:focus .middle {
     opacity: 1;
     -webkit-transform: translateY(10px);
     -moz-transform: translateY(10px);
     -ms-transform: translateY(10px);
     -o-transform: translateY(10px);
     transform: translateY(10px); }
-  .grid-item:hover .img-container {
+  .grid-item:hover .img-container, .grid-item:active .img-container, .grid-item:focus .img-container {
     transform: scale(1.1); }
 
 .img-container {
