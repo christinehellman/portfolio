@@ -18,7 +18,7 @@
 //  s03.00 – Lists and Other Typography
 //    s03.01 – List formatting
 //    s03.02 – small, fig, legend, etc.
-//    s03.03 – links
+//    s03.03 - padding
 //
 //  s04.00 – Navigation
 //    s04.01 – Navbar
@@ -26,7 +26,7 @@
 //
 //  s05.00 – Links, buttons
 //
-//  s06.00 – Forms
+//  s06.00 – Padding
 //------------------------------------------
 
 //------------------------------------------
@@ -175,6 +175,22 @@ figure > img {
   display: block;
 }
 
+// Image styles on case studies layout
+.case-studies-images {
+  position: relative;
+  display: block;
+
+  .img-intro {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 45rem;
+    }
+  }
+}
+
 //------------------------------------------
 //  s03.00 Lists and Other Typography
 //------------------------------------------
@@ -209,10 +225,60 @@ blockquote {
   font-size: 18px;
   letter-spacing: -1px;
   font-style: italic;
+
+  &.intro-hero-quote {
+    color: $text-color;
+    border: 0;
+    padding: 0;
+    font-style: normal;
+    letter-spacing: normal;
+    font-family: $font-family-display;
+    @include rem('font-size', $heading-one-size);
+    @include rem('padding-top', $global-padding-vertical);
+  }
 }
 
 blockquote > :last-child {
   margin-bottom: 0;
+}
+
+// heading adjust
+.post-title,
+.post-header {
+  font-weight: 400;
+  font-family: $font-family-display;
+  @include rem('padding', $global-padding-horizontal 0);
+}
+
+// s03.03 - paddding
+
+// overall padding
+.article-inner,
+.page-content,
+.projects {
+  @include rem('padding', $article-content-padding 0);
+  position: relative;
+}
+
+.lede,
+p,
+.header {
+  @include rem('padding-bottom', $line-height-unit);
+}
+
+// padding for groups of text
+.section-inner {
+  @include rem('padding-bottom', #{$line-height-unit});
+}
+
+.work .projects {
+  @include rem('padding-bottom', 200px);
+}
+
+ul li,
+ol li,
+dl dd {
+  @include rem('padding-bottom', $line-height-unit);
 }
 
 //------------------------------------------
@@ -256,7 +322,6 @@ blockquote > :last-child {
 .site-nav .page-link {
   color: $text-color;
   line-height: 1.5;
-  cursor: pointer;
 
   &:hover,
   &:active {
@@ -279,7 +344,16 @@ blockquote > :last-child {
     border-top: 1px solid #e8e8e8;
     border-bottom: 1px solid #e8e8e8;
     background: $bg-dark;
+    .skills-inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 1rem 2rem;
+      ul {
+        list-style: none;
+      }
+    }
   }
+
   .footer-bottom {
     @include rem('padding-top', 200px);
     @include rem('padding-bottom', 100px);
@@ -288,7 +362,7 @@ blockquote > :last-child {
 }
 
 //------------------------------------------
-//  s5.00 – Links, Buttons
+//  s5.00 – Links, Buttons, social icons
 //------------------------------------------
 a {
   color: $brand-primary;
@@ -324,10 +398,6 @@ a {
   vertical-align: text-top;
 }
 
-.social-media-list li + li {
-  padding-top: 5px;
-}
-
 // Buttons
 button {
   @include buttons;
@@ -345,13 +415,6 @@ button {
   //@include btn-tertiary;
 }
 
-.post-title,
-.post-header {
-  font-weight: 400;
-  font-family: $font-family-display;
-  @include rem('padding', $global-padding-horizontal 0);
-}
-
 .post-list > li {
   margin-bottom: 30px;
 }
@@ -366,68 +429,14 @@ button {
   font-size: 24px;
 }
 
-// ------------------------------------------
-// s02.00
-// ------------------------------------------
-// overall padding
-.article-inner,
-.page-content,
-.projects {
-  @include rem('padding', $article-content-padding 0);
-  position: relative;
-}
-
-.lede,
-p,
-.header {
-  @include rem('padding-bottom', $line-height-unit);
-}
-
-// padding for groups of text
-.section-inner {
-  @include rem('padding-bottom', #{$line-height-unit});
-}
-
-.projects {
-  @include rem('padding-bottom', 200px);
-}
-
-// HP Sections
-
-.skills {
-  .skills-inner {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 1rem 2rem;
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-  }
-}
-
-// home page intro
-.intro-hero {
-  background: $bg-light;
-  article {
-    @include grid-50;
-  }
-  .intro-header {
-    font-size: $heading-one-size;
-  }
-  .intro-content {
-    font-size: $font-paragraph-size;
-  }
-}
-
+.site-link,
 .page-link,
 .site-title {
   color: $brand-primary;
   position: relative;
   transition: all 0.2s ease;
   text-transform: lowercase;
-  cursor: pointer;
+  display: inline;
 
   &:after {
     content: '';
@@ -440,40 +449,62 @@ p,
     @include transition(all ease 0.2s);
   }
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     color: $brand-secondary;
     text-decoration: none;
     &:after {
+      content: '';
+      position: absolute;
       left: 0;
       right: 0;
       height: 2px;
+      background: $brand-secondary;
     }
   }
 }
 
-.projects {
-  background: $bg-medium;
+// ------------------------------------------
+// s06.00 Sections
+// ------------------------------------------
+
+// s06.01 HP Sections
+
+// home page intro
+.intro-hero {
+  background: $bg-light;
+  .intro-hero-header {
+    @include rem('padding', $global-padding-horizontal 0);
+  }
   article {
     @include grid-50;
   }
-
+  // special case
+  .intro-hero-header {
+    font-family: $font-family-base;
+    font-size: $heading-two-size;
+  }
   .intro-content {
-    padding-right: 3rem;
-    border-right: 0.3rem solid $brand-primary;
+    font-size: $font-paragraph-size;
   }
-  .article-inner {
-    text-align: right;
-  }
+}
+
+// hp layout
+.projects {
   .hp-mockup {
     @include rem('height', 430px);
+    overflow: hidden;
     z-index: 2000;
     position: relative;
     background: #f5f5f5;
     border: 5px solid #f5f5f5;
     box-shadow: 14px 16px 50px 0 rgba(38, 27, 44, 0.1);
+    img {
+      max-width: none;
+    }
   }
 
-  &:nth-child(even) {
+  &:nth-child(odd) {
     .hp-mockup {
       box-shadow: -14px 16px 50px 0 rgba(38, 27, 44, 0.1);
     }
@@ -487,43 +518,6 @@ p,
       border-left: 0.3rem solid $brand-primary;
     }
   }
-}
-
-.see-case-study {
-  overflow: hidden;
-  padding: 10rem 0;
-  position: relative;
-  article {
-    border-top: 5px solid $brand-primary;
-    border-bottom: 5px solid $brand-primary;
-  }
-}
-
-.case-studies {
-  p {
-    @include rem('padding-bottom', $line-height-unit);
-  }
-}
-.case-studies-images {
-  position: relative;
-  display: block;
-
-  .img-intro {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    img {
-      width: 45rem;
-    }
-  }
-}
-
-// Internal page set up
-
-.internal-page,
-.page-content {
-  overflow: hidden;
 }
 
 div[class^='coffee-bean'] {
@@ -557,7 +551,7 @@ svg.dogwood {
 
 .coffee-bean-1 img {
   right: 0;
-  @include rem('top', -50px);
+  @include rem('top', -10px);
 }
 
 .coffee-bean-2 img {
@@ -603,5 +597,207 @@ svg.dogwood {
     //left: 10rem;
     @include rem('top', 200px);
     @include rem('left', 100px);
+  }
+}
+
+// projects listing, including internal posts to see website
+.projects {
+  background: $bg-medium;
+  article {
+    @include grid-50;
+  }
+  .intro-content {
+    padding-right: 3rem;
+    border-right: 0.3rem solid $brand-primary;
+  }
+  .article-inner {
+    text-align: right;
+  }
+}
+
+// s06.02 Internal Page sections
+
+// internal pages for case studies
+.see-website {
+  overflow: hidden;
+  position: relative;
+  background: $bg-dark;
+  @include rem('margin', $global-padding-vertical 0);
+}
+
+.case-studies {
+  .case-studies-intro,
+  .see-website article {
+    @include grid-50;
+  }
+}
+
+// Internal page set up
+
+//smaller related Images
+.grid-container {
+  //padding: $global-padding-horizontal;
+
+  /* Grid Fallback is this still needed?*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-bottom: $global-padding-vertical;
+
+  /* Supports Grid */
+  display: grid;
+  -ms-grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: $line-height-unit;
+
+  // change the rem number to achieve final number of cards in column
+  @media screen and (min-width: 767px) {
+    -ms-grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+.grid-item {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  @include rem('height', 430px);
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  .middle {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    width: 100%;
+    -moz-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    transform: translateY(25%);
+    margin: 0 $global-padding-horizontal;
+  }
+
+  .small {
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+  }
+  &:hover {
+    img {
+      opacity: 0.1;
+    }
+    .middle {
+      opacity: 1;
+      -webkit-transform: translateY(10px);
+      -moz-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+      -o-transform: translateY(10px);
+      transform: translateY(10px);
+    }
+
+    .img-container {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.img-container {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  -webkit-transition: transform 0.35s;
+  transition: transform 0.35s;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content,
+#caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 100px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
   }
 }

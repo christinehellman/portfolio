@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+    <body>
+      {% include header.html %}
+
+      <main class="page-content" aria-label="Content">
+        <article class="internal-page">
+            <div class="wrapper">
+
+            <section class="intro">
+                <div class="article-inner">
+                  <header class="intro-header">
+                    <h1 class="header">All Work</h1>
+                  </header>
+                  <div class="intro-content">
+                  <h2>Find the rest of my design and development skills throught the sites and graphics I've created below.</h2>
+                  </div>
+                </div>
+
+            </section>
+
+        <h2>Web Design & Frontend Development</h2>
+        <div class="grid-container">
+            <div class="item item-1">
+              <div class="grid-item">
+                  <div class ="img-container">
+                    <img id="myImg" src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535140440/Bryson-Lawfirm-Website.png" alt"">
+                  </div>
+                  <div class="middle">
+                    <p class="small">Web Design & Frontend Development</p>
+                    <h3>Bryson Law Firm</h3>
+                    <a href="https://www.brysonlawfirm.com/" target="_blank" class="page-link">see live site</a>
+                  </div>
+              </div>
+            </div>
+            <div class="item item-2">
+                <div class="grid-item">
+              <div class ="img-container">
+                <img id="myImg" src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535140859/RD-Tire_Website.png" alt"">
+              </div>
+              <div class="middle">
+                <p class="small">Web Design & Frontend Development</p>
+                <h3>RDH Tire</h3>
+                <a href="https://www.rdhtire.com/" target="_blank" class="page-link">see live site</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Email and Digital Design</h2>
+        <div class="grid-container">
+            <div class="item item-1">
+              <div class="grid-item">
+                  <div class ="img-container">
+                    <img id="myImg" src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535306003/project_email-valentines.png" alt"">
+                  </div>
+                  <div class="middle">
+                    <p class="small">Email design & development</p>
+                    <h3>Autobell® Car Wash</h3>
+                    <a href="http://1092.mp2203.com/a/1092/preview/576/1015/a7aab845c4a78ec217587f0a8bf54acb690aa2f1?message_id=ImI2OTEyZDMwLWVmZDMtMDEzNS00YWNmLTE0MDJlYzgzYjg3MEBtcDIyMDEuY29tIg==" target="_blank" class="page-link">see live email</a>
+                  </div>
+              </div>
+            </div>
+            <div class="item item-2">
+                <div class="grid-item">
+              <div class ="img-container">
+                <img id="myImg" src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535306186/project_email-newsletter.png" alt"">
+              </div>
+              <div class="middle">
+                <p class="small">Email design & development</p>
+                <h3>enCOMPASS Advertising Agency</h3>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2>Logos</h2>
+        <div class="grid-container">
+            <div class="item item-1">
+              <div class="grid-item">
+                  <div class ="img-container">
+                    <img id="myImg" src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535307376/logo_eleven-lakes.jpg" alt"">
+                  </div>
+                  <div class="middle">
+                    <p class="small">Logo</p>
+                    <h3>Eleven Lakes Brewery</h3>
+                  </div>
+              </div>
+            </div>
+            <div class="item item-2">
+                <div class="grid-item">
+              <div class ="img-container">
+                <img id="myImg" src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535307375/logo_Fathers-House.jpg" alt"">
+              </div>
+              <div class="middle">
+                <p class="small">Logo</p>
+                <h3>Father's House Ghana</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!--The Modal -->
+      <div id="imgModal" class="modal">
+        <span class="close">x</span>
+        <img class="modal-content" id="img01">
+        <!--<div id="caption"><p>This is a  image</p></div>-->
+      </div>
+
+</article>
+</section>
+      {% include footer.html %}
+<script>
+//Get the modal
+var modal = document.getElementById('imgModal');
+modal.addEventListener('click', function() {
+  this.style.display = 'none';
+});
+var span = document.getElementsByClassName('close')[0];
+
+//click on (x), close the modal
+span.onclick = function() {
+  modal.style.display = 'none';
+};
+
+//Get the image
+var images = document.getElementsByTagName('img');
+var modalImg = document.getElementById('img01');
+//var captionText = document.getElementById("caption");
+
+var i;
+for (i = 0; i < images.length; i++) {
+  images[i].onclick = function() {
+    modal.style.display = 'block';
+    modalImg.src = this.src;
+    modalImg.alt = this.alt;
+    modalImg.style.opacity = '1';
+  };
+}
+</script>
+
+    </body>
+</html>
