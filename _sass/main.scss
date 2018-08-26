@@ -473,6 +473,7 @@ button {
 // home page intro
 .intro-hero {
   background: $bg-light;
+  overflow: hidden;
   .intro-hero-header {
     @include rem('padding', $global-padding-horizontal 0);
   }
