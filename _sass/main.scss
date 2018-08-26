@@ -660,7 +660,6 @@ svg.dogwood {
 }
 
 .grid-item {
-  cursor: pointer;
   position: relative;
   width: 100%;
   @include rem('height', 430px);
@@ -673,7 +672,6 @@ svg.dogwood {
   overflow: hidden;
   .middle {
     opacity: 0;
-    cursor: pointer;
     position: absolute;
     opacity: 0;
     bottom: 0;
@@ -697,7 +695,9 @@ svg.dogwood {
     position: relative;
     width: 100%;
   }
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     img {
       opacity: 0.1;
     }
