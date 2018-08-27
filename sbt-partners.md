@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: featured-project-layout
 title: UI Design & Front End Development
-permalink: /design-dev/
+permalink: /SBT-Partners/
 ---
 
 Content Coming Soon
