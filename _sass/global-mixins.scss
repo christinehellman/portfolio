@@ -42,30 +42,30 @@
   h2 {
     font-family: $font-family-base;
     @include rem('font-size', $heading-two-size);
-    font-weight: $base-font-weight;
+    font-weight: $font-weight-light;
   }
   h3 {
     font-family: $font-family-base;
     @include rem('font-size', $heading-three-size);
-    font-weight: $base-font-weight;
+    font-weight: $font-weight-light;
   }
   h4,
   label {
     font-family: $font-family-base;
     @include rem('font-size', $heading-four-size);
-    font-weight: $base-font-weight;
+    font-weight: $font-weight-light;
   }
   p,
   font-paragraph-size ul,
   li {
     font-family: $font-family-base;
     @include rem('font-size', $font-paragraph-size);
-    font-weight: 300;
-    font-weight: $base-font-weight;
+    font-weight: $font-weight-light;
   }
   a {
     font-family: $font-family-base;
     @include rem('font-size', $font-paragraph-size);
+    font-weight: $font-weight-light;
   }
   figcaption {
     @include rem('font-size', $small-font-size);
@@ -87,6 +87,30 @@
   -o-transition: $transition;
   -webkit-transition: $transition;
   transition: $transition;
+}
+@mixin transition-property($property...) {
+  -moz-transition-property: $property;
+  -o-transition-property: $property;
+  -webkit-transition-property: $property;
+  transition-property: $property;
+}
+@mixin transition-duration($duration...) {
+  -moz-transition-property: $duration;
+  -o-transition-property: $duration;
+  -webkit-transition-property: $duration;
+  transition-property: $duration;
+}
+@mixin transition-timing-function($timing...) {
+  -moz-transition-timing-function: $timing;
+  -o-transition-timing-function: $timing;
+  -webkit-transition-timing-function: $timing;
+  transition-timing-function: $timing;
+}
+@mixin transition-delay($delay...) {
+  -moz-transition-delay: $delay;
+  -o-transition-delay: $delay;
+  -webkit-transition-delay: $delay;
+  transition-delay: $delay;
 }
 
 // Buttons
@@ -127,7 +151,14 @@
 // Layouts
 @mixin grid-50() {
   display: grid;
+  -ms-grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 1rem 3rem;
   min-width: 0;
+}
+
+@mixin flex() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
