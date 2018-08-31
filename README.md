@@ -4,7 +4,7 @@
 
 # Portfolio Website.
 
-## Still lots of cleanup I know, just ready to get a new job!
+## Still lots of cleanup I know, this is a work in progress and loving every step of the way!
 
 ### Things to do:
 
