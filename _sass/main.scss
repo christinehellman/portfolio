@@ -538,7 +538,7 @@ div[class^='coffee-bean'] {
 }
 .dogwood {
   @include rem('min-width', 500px);
-  @include rem('height', 500px);
+  @include rem('height', 400px);
   position: relative;
   z-index: 10;
   min-height: 100%;
@@ -547,7 +547,7 @@ div[class^='coffee-bean'] {
 
 .blueberry {
   @include rem('min-width', 500px);
-  @include rem('height', 500px);
+  @include rem('height', 400px);
   position: relative;
   z-index: 10;
   min-height: 100%;
