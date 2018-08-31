@@ -541,7 +541,6 @@ div[class^='coffee-bean'] {
   @include rem('height', 400px);
   position: relative;
   z-index: 10;
-  min-height: 100%;
   width: 100%;
 }
 

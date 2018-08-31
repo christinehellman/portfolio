@@ -74,30 +74,30 @@ body {
     font-family: "Poppins", sans-serif;
     font-size: 24px;
     font-size: 2.4rem;
-    font-weight: 200; }
+    font-weight: 300; }
   body h3 {
     font-family: "Poppins", sans-serif;
     font-size: 24px;
     font-size: 2.4rem;
-    font-weight: 200; }
+    font-weight: 300; }
   body h4,
   body label {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-size: 1.6rem;
-    font-weight: 200; }
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 300; }
   body p,
   body font-paragraph-size ul,
   body li {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-size: 1.6rem;
-    font-weight: 200; }
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 300; }
   body a {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-size: 1.6rem;
-    font-weight: 200; }
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 300; }
   body figcaption {
     font-size: 8.75px;
     font-size: 0.875rem; }
@@ -361,7 +361,7 @@ button {
   font-size: 10px;
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   margin-top: 3rem;
   width: 100%;
   max-width: 300px;
@@ -375,8 +375,8 @@ button {
   color: #fff;
   background: #9139da;
   border: 0.1rem solid #9139da;
-  font-size: 16px;
-  font-size: 1.6rem; }
+  font-size: 18px;
+  font-size: 1.8rem; }
   .btn-primary:hover {
     color: #fff;
     background: #c46bef;
@@ -455,9 +455,9 @@ main {
   .intro-hero .intro-hero-header {
     font-family: "Poppins", sans-serif;
     font-size: 24px;
-    font-weight: 200; }
+    font-weight: 300; }
   .intro-hero .intro-content {
-    font-size: 16px; }
+    font-size: 18px; }
 
 .projects .hp-mockup {
   max-height: 430px;
@@ -504,7 +504,6 @@ div[class^='coffee-bean'] {
   height: 40rem;
   position: relative;
   z-index: 10;
-  min-height: 100%;
   width: 100%; }
 
 .blueberry {
