@@ -500,8 +500,8 @@ div[class^='coffee-bean'] {
 .dogwood {
   min-width: 500px;
   min-width: 50rem;
-  height: 500px;
-  height: 50rem;
+  height: 400px;
+  height: 40rem;
   position: relative;
   z-index: 10;
   min-height: 100%;
@@ -510,8 +510,8 @@ div[class^='coffee-bean'] {
 .blueberry {
   min-width: 500px;
   min-width: 50rem;
-  height: 500px;
-  height: 50rem;
+  height: 400px;
+  height: 40rem;
   position: relative;
   z-index: 10;
   min-height: 100%;
