@@ -177,10 +177,9 @@ figure > img {
 // Image styles on case studies layout
 .internal-images {
   position: relative;
-  display: block;
-
-  position: relative;
-  display: block;
+  @include flex;
+  align-items: center;
+  justify-content: center;
 
   img {
     width: 100%;
@@ -260,8 +259,11 @@ p.lede {
 }
 
 .lede,
-p,
 .header {
+  @include rem('padding-bottom', $global-padding-horizontal);
+}
+
+p {
   @include rem('padding-bottom', $line-height-unit);
 }
 

@@ -166,9 +166,11 @@ figure > img {
 
 .internal-images {
   position: relative;
-  display: block;
-  position: relative;
-  display: block; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
   .internal-images img {
     width: 100%;
     padding: calc(15px * 2) 0;
@@ -236,8 +238,11 @@ p.lede {
   position: relative; }
 
 .lede,
-p,
 .header {
+  padding-bottom: calc(15px * 2);
+  padding-bottom: calc(15px * 2); }
+
+p {
   padding-bottom: 15px;
   padding-bottom: 15px; }
 
