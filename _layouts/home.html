@@ -6,6 +6,7 @@
 
 
 
+
     <main class="page-content" aria-label="Content">
 
     <!--<div class="wrapper site-nav">
@@ -34,29 +35,31 @@
 
           <div class="hero-intro-svgs">
             <div class="coffee-bean-1 rellax">
-              <img src="/assets/svg/coffeebeans/coffee-bean-1.svg">
+              {% include coffeebeans/coffee-bean-1.html file="coffee-bean-1.svg"  alt="coffee bean" %}
             </div>
             <div class="coffee-bean-2 rellax">
-              <img src="/assets/svg/coffeebeans/coffee-bean-2.svg" alt="Coffee bean">
+              {% include coffeebeans/coffee-bean-2.html file="coffee-bean-2.svg"  alt="coffee bean" %}
             </div>
             <div class="coffee-bean-3 rellax">
-              <img src="/assets/svg/coffeebeans/coffee-bean-3.svg" alt="Coffee bean">
+              {% include coffeebeans/coffee-bean-3.html file="coffee-bean-3.svg"  alt="coffee bean" %}
             </div>
             <div class="coffee-bean-4 rellax">
-              <img src="/assets/svg/coffeebeans/coffee-bean-4.svg" alt="Coffee bean">
+              {% include coffeebeans/coffee-bean-4.html file="coffee-bean-4.svg"  alt="coffee bean" %}
             </div>
             <div class="coffee-bean-5 rellax">
-              <img src="/assets/svg/coffeebeans/coffee-bean-5.svg" alt="Coffee bean">
+              {% include coffeebeans/coffee-bean-5.html file="coffee-bean-5.svg"  alt="coffee bean" %}
             </div>
-
+            <div class="header-svg">
             <div class="dogwood">
-              <img src="/assets/svg/dogwood.svg" alt="dogwood flower branch">
+              {% include dogwood.html file="dogwood.svg"  alt="dogwood branch" %}
+
             </div>
 
             <div class="blueberry">
-              <img src="/assets/svg/blueberry.svg" alt="Blueberry bunch">
+  {% include blueberry.html file="bluberry.svg"  alt="blueberry bunch" %}
             </div>
           </div>
+        </div>
         </article>
       </div>
     </section>
@@ -70,14 +73,14 @@
         <div class="wrapper">
           <div class="projects-coffee-beans">
             <div class="coffee-bean-2 rellax">
-              <img src="/assets/svg/coffeebeans/coffee-bean-2.svg" alt="Coffee bean">
+              {% include coffeebeans/coffee-bean-2.html file="coffee-bean-2.svg"  alt="coffee bean" %}
             </div>
             <div class="coffee-bean-3 rellax">
-              <img src="/assets/svg/coffeebeans/coffee-bean-3.svg" alt="Coffee bean">
+              {% include coffeebeans/coffee-bean-3.html file="coffee-bean-3.svg"  alt="coffee bean" %}
             </div>
 
             <div class="coffee-bean-5 rellax">
-              <img src="/assets/svg/coffeebeans/coffee-bean-5.svg" alt="Coffee bean">
+              {% include coffeebeans/coffee-bean-5.html file="coffee-bean-5.svg"  alt="coffee bean" %}
             </div>
           </div>
           <article>
@@ -88,9 +91,9 @@
               </div>
             </a>
             <div class="article-inner rellax">
-              <p class="small">FRONTEND DEVELOPMENT</p>
+              <h2 class="small">FRONTEND DEVELOPMENT</h2>
               <header class="intro-header">
-                <h2 class="header">framework for Hikashop extension</h2>
+                <h3 class="header">framework for Hikashop extension</h3>
               </header>
               <div class="intro-content">
                 <p>A shopping cart framework with code that was flexible but could withstand extension updates and modifications from the client.</p>
@@ -102,13 +105,12 @@
       </section>
 
       <section class="projects">
-
         <div class="wrapper">
           <article>
             <div class="article-inner rellax">
-              <p class="small">UI DESIGN & FRONTEND DEVELOPMENT</p>
+              <h2 class="small">UI DESIGN & FRONTEND DEVELOPMENT</h2>
               <header class="intro-header">
-                <h2 class="header">technology and cloud services company</h2>
+                <h3 class="header">technology and cloud services company</h3>
               </header>
               <div class="intro-content">
                 <p>Featured project focused on videos with a minimal, bright design that includes fun UI interactions.</p>
@@ -130,14 +132,14 @@
         <div class="wrapper">
           <div class="projects-coffee-beans">
             <div class="coffee-bean-2 rellax">
-              <img src="/assets/svg/coffeebeans/coffee-bean-2.svg" alt="Coffee bean">
+              {% include coffeebeans/coffee-bean-2.html file="coffee-bean-2.svg"  alt="coffee bean" %}
             </div>
             <div class="coffee-bean-3 rellax">
-              <img src="/assets/svg/coffeebeans/coffee-bean-3.svg" alt="Coffee bean">
+              {% include coffeebeans/coffee-bean-3.html file="coffee-bean-3.svg"  alt="coffee bean" %}
             </div>
 
             <div class="coffee-bean-5 rellax">
-              <img src="/assets/svg/coffeebeans/coffee-bean-5.svg" alt="Coffee bean">
+              {% include coffeebeans/coffee-bean-5.html file="coffee-bean-5.svg"  alt="coffee bean" %}
             </div>
           </div>
           <article>
@@ -147,9 +149,9 @@
               </div>
             </a>
             <div class="article-inner rellax">
-              <p class="small">SEE ALL WORK</p>
+              <h2 class="small">SEE ALL WORK</h2>
               <header class="intro-header">
-                <h2 class="header">all.the.things. because I love learning</h2>
+                <h3 class="header">all.the.things. because I love learning</h3>
               </header>
               <div class="intro-content">
                 <p>The rest of my design, development, and creative works.</p>

@@ -72,6 +72,13 @@
   }
 }
 
+@mixin font-small {
+  color: $brand-primary;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  @include rem('font-size', $font-small-size);
+}
+
 // Transitions/animations/etc
 
 @mixin transform($transforms) {

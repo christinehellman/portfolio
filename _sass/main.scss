@@ -210,9 +210,8 @@ li > ol {
 }
 
 // s03.02 – Other typography
-p.small {
-  color: $brand-primary;
-  padding-bottom: 0;
+.small {
+  @include font-small;
 }
 
 blockquote {
@@ -346,12 +345,11 @@ dl dd {
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       grid-gap: 1rem 2rem;
       ul {
+        @include rem('padding-top', $line-height-unit);
         list-style: none;
       }
       .intro-header h3 {
-        @include rem('font-size', $heading-two-size);
-        text-transform: uppercase;
-        color: $brand-primary;
+        @include font-small;
       }
     }
   }
@@ -507,15 +505,9 @@ main {
     @include flex;
     justify-content: center;
     align-items: center;
-    //background: #f5f5f5;
-    //border: 5px solid #f5f5f5;
-    //box-shadow: 14px 16px 50px 0 rgba(38, 27, 44, 0.1);
   }
 
   &:nth-child(odd) {
-    .hp-mockup {
-      //box-shadow: -14px 16px 50px 0 rgba(38, 27, 44, 0.1);
-    }
     .article-inner {
       text-align: left;
     }
@@ -539,7 +531,7 @@ div[class^='coffee-bean'] {
   width: 100%;
   @include flex;
   justify-content: flex-end;
-  img {
+  svg {
     max-width: none;
     position: absolute;
   }
@@ -553,41 +545,50 @@ div[class^='coffee-bean'] {
   width: 100%;
 }
 
-.coffee-bean-1 img {
+.blueberry {
+  @include rem('min-width', 500px);
+  @include rem('height', 500px);
+  position: relative;
+  z-index: 10;
+  min-height: 100%;
+  width: 100%;
+}
+
+.coffee-bean-1 {
   right: 0;
   @include rem('top', -10px);
 }
 
-.coffee-bean-2 img {
+.coffee-bean-2 {
   @include rem('right', -100px);
   @include rem('top', 150px);
 }
 
-.coffee-bean-3 img {
+.coffee-bean-3 {
   @include rem('top', 300px);
 }
 
-.coffee-bean-4 img {
+.coffee-bean-4 {
   @include rem('top', 450px);
   @include rem('right', -50px);
 }
 
-.coffee-bean-5 img {
+.coffee-bean-5 {
   @include rem('top', 600px);
 }
 
 .projects {
-  .coffee-bean-2 img {
+  .coffee-bean-2 {
     @include rem('top', 0px);
     @include rem('left', 100px);
   }
 
-  .coffee-bean-3 img {
+  .coffee-bean-3 {
     left: 0;
     @include rem('top', 100px);
   }
 
-  .coffee-bean-5 img {
+  .coffee-bean-5 {
     @include rem('top', 200px);
     @include rem('left', 100px);
   }
@@ -677,7 +678,6 @@ div[class^='coffee-bean'] {
   }
 
   .small {
-    text-transform: uppercase;
     position: relative;
     width: 100%;
   }

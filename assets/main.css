@@ -77,8 +77,8 @@ body {
     font-weight: 200; }
   body h3 {
     font-family: "Poppins", sans-serif;
-    font-size: 18px;
-    font-size: 1.8rem;
+    font-size: 24px;
+    font-size: 2.4rem;
     font-weight: 200; }
   body h4,
   body label {
@@ -188,9 +188,12 @@ li > ul,
 li > ol {
   margin-bottom: 0; }
 
-p.small {
+.small {
   color: #9139da;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-size: 1.6rem; }
 
 blockquote {
   color: #828282;
@@ -303,12 +306,15 @@ dl dd {
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       grid-gap: 1rem 2rem; }
       .site-footer .skills .skills-inner ul {
+        padding-top: 15px;
+        padding-top: 15px;
         list-style: none; }
       .site-footer .skills .skills-inner .intro-header h3 {
-        font-size: 24px;
-        font-size: 2.4rem;
+        color: #9139da;
+        padding-bottom: 0;
         text-transform: uppercase;
-        color: #9139da; }
+        font-size: 16px;
+        font-size: 1.6rem; }
   .site-footer .footer-bottom {
     padding-top: 200px;
     padding-top: 20rem;
@@ -487,7 +493,7 @@ div[class^='coffee-bean'] {
   display: -ms-flexbox;
   display: flex;
   justify-content: flex-end; }
-  div[class^='coffee-bean'] img {
+  div[class^='coffee-bean'] svg {
     max-width: none;
     position: absolute; }
 
@@ -501,43 +507,53 @@ div[class^='coffee-bean'] {
   min-height: 100%;
   width: 100%; }
 
-.coffee-bean-1 img {
+.blueberry {
+  min-width: 500px;
+  min-width: 50rem;
+  height: 500px;
+  height: 50rem;
+  position: relative;
+  z-index: 10;
+  min-height: 100%;
+  width: 100%; }
+
+.coffee-bean-1 {
   right: 0;
   top: -10px;
   top: -1rem; }
 
-.coffee-bean-2 img {
+.coffee-bean-2 {
   right: -100px;
   right: -10rem;
   top: 150px;
   top: 15rem; }
 
-.coffee-bean-3 img {
+.coffee-bean-3 {
   top: 300px;
   top: 30rem; }
 
-.coffee-bean-4 img {
+.coffee-bean-4 {
   top: 450px;
   top: 45rem;
   right: -50px;
   right: -5rem; }
 
-.coffee-bean-5 img {
+.coffee-bean-5 {
   top: 600px;
   top: 60rem; }
 
-.projects .coffee-bean-2 img {
+.projects .coffee-bean-2 {
   top: 0px;
   top: 0rem;
   left: 100px;
   left: 10rem; }
 
-.projects .coffee-bean-3 img {
+.projects .coffee-bean-3 {
   left: 0;
   top: 100px;
   top: 10rem; }
 
-.projects .coffee-bean-5 img {
+.projects .coffee-bean-5 {
   top: 200px;
   top: 20rem;
   left: 100px;
@@ -624,7 +640,6 @@ div[class^='coffee-bean'] {
     transform: translateY(25%);
     padding: 0 calc(15px * 2); }
   .grid-item .small {
-    text-transform: uppercase;
     position: relative;
     width: 100%; }
   .grid-item:hover img, .grid-item:active img, .grid-item:focus img {
