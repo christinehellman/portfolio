@@ -74,30 +74,30 @@ body {
     font-family: "Poppins", sans-serif;
     font-size: 24px;
     font-size: 2.4rem;
-    font-weight: 300; }
+    font-weight: 200; }
   body h3 {
     font-family: "Poppins", sans-serif;
     font-size: 24px;
     font-size: 2.4rem;
-    font-weight: 300; }
+    font-weight: 200; }
   body h4,
   body label {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-size: 1.8rem;
-    font-weight: 300; }
+    font-weight: 200; }
   body p,
   body font-paragraph-size ul,
   body li {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-size: 1.8rem;
-    font-weight: 300; }
+    font-weight: 200; }
   body a {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-size: 1.8rem;
-    font-weight: 300; }
+    font-weight: 200; }
   body figcaption {
     font-size: 8.75px;
     font-size: 0.875rem; }
@@ -366,7 +366,7 @@ button {
   font-size: 10px;
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   margin-top: 3rem;
   width: 100%;
   max-width: 300px;
@@ -460,7 +460,7 @@ main {
   .intro-hero .intro-hero-header {
     font-family: "Poppins", sans-serif;
     font-size: 24px;
-    font-weight: 300; }
+    font-weight: 200; }
   .intro-hero .intro-content {
     font-size: 18px; }
 
