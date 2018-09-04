@@ -180,11 +180,6 @@ figure > img {
   @include flex;
   align-items: center;
   justify-content: center;
-
-  img {
-    width: 100%;
-    @include rem('padding', $global-padding-horizontal 0);
-  }
 }
 
 //------------------------------------------
@@ -209,8 +204,16 @@ li > ol {
 }
 
 // s03.02 – Other typography
-.small {
+.small,
+small {
   @include font-small;
+}
+small {
+  text-transform: none;
+  color: rgba($text-color, 0.6);
+  a {
+    @include rem('font-size', $font-small-size);
+  }
 }
 
 blockquote {
@@ -244,7 +247,7 @@ blockquote > :last-child {
   font-family: $font-family-display;
   @include rem('padding', $global-padding-horizontal 0);
 }
-p.lede {
+.lede {
   @include rem('font-size', $heading-two-size);
 }
 
@@ -259,7 +262,7 @@ p.lede {
 }
 
 .lede,
-.header {
+.project-desc {
   @include rem('padding-bottom', $global-padding-horizontal);
 }
 
@@ -280,6 +283,11 @@ ul li,
 ol li,
 dl dd {
   @include rem('padding-bottom', $line-height-unit);
+}
+
+.expertise,
+.footer-bottom-inner {
+  @include rem('padding', $article-content-padding-large 0);
 }
 
 //------------------------------------------
@@ -328,7 +336,7 @@ dl dd {
 
 //  s04.02 Footer
 .site-footer {
-  background: #fff;
+  background: $bg-light;
 
   .social-icon svg {
     fill: $brand-primary;
@@ -338,11 +346,11 @@ dl dd {
       fill: $brand-secondary;
     }
   }
-  .skills {
+  .expertise {
     border-top: 1px solid #e8e8e8;
     border-bottom: 1px solid #e8e8e8;
     background: $bg-dark;
-    .skills-inner {
+    .expertise-inner {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       grid-gap: 1rem 2rem;
@@ -350,15 +358,13 @@ dl dd {
         @include rem('padding-top', $line-height-unit);
         list-style: none;
       }
-      .intro-header h3 {
+      h3 {
         @include font-small;
       }
     }
   }
 
-  .footer-bottom {
-    @include rem('padding-top', 200px);
-    @include rem('padding-bottom', 100px);
+  .footer-bottom-inner {
     @include grid-50;
   }
 }
@@ -393,11 +399,11 @@ a {
  * Icons
  */
 .svg-icon {
+  @include rem('padding-right', $line-height-unit);
   width: 24px;
   height: 24px;
   display: inline-block;
-  fill: #828282;
-  padding-right: 5px;
+  fill: $brand-primary;
   vertical-align: text-top;
 }
 
@@ -476,13 +482,13 @@ main {
   overflow: hidden;
 }
 // home page intro
-.intro-hero {
+.hero {
   background: $bg-light;
   //overflow: hidden;
   .intro-hero-header {
     @include rem('padding', $global-padding-horizontal 0);
   }
-  article {
+  .intro-hero {
     @include grid-50;
   }
   // special case
@@ -500,24 +506,30 @@ main {
 .projects {
   .hp-mockup {
     @include rem('max-height', 430px);
+    @include flex;
     height: 100%;
-    //overflow: hidden;
     z-index: 2000;
     position: relative;
-    @include flex;
     justify-content: center;
     align-items: center;
   }
-
-  &:nth-child(odd) {
-    .article-inner {
-      text-align: left;
-    }
+  .page-content {
+    text-align: left;
     .intro-content {
-      padding-right: 0;
-      border-right: 0;
       padding-left: 3rem;
       border-left: 0.3rem solid $brand-primary;
+    }
+  }
+
+  &:nth-child(even) {
+    .page-content {
+      text-align: right;
+      .intro-content {
+        padding-left: 0;
+        border-left: 0;
+        padding-right: 3rem;
+        border-right: 0.3rem solid $brand-primary;
+      }
     }
   }
 }
@@ -580,12 +592,12 @@ div[class^='coffee-bean'] {
 
 .projects {
   .coffee-bean-2 {
-    @include rem('top', 0px);
+    @include rem('top', -15px);
     @include rem('left', 100px);
   }
 
   .coffee-bean-3 {
-    left: 0;
+    @include rem('left', 50px);
     @include rem('top', 100px);
   }
 
@@ -596,17 +608,11 @@ div[class^='coffee-bean'] {
 }
 
 // projects listing, including internal posts to see website
-.projects {
+.work,
+.see-website {
   background: $bg-medium;
-  article {
+  .projects {
     @include grid-50;
-  }
-  .intro-content {
-    padding-right: 3rem;
-    border-right: 0.3rem solid $brand-primary;
-  }
-  .article-inner {
-    text-align: right;
   }
 }
 
@@ -618,11 +624,14 @@ div[class^='coffee-bean'] {
   position: relative;
   background: $bg-dark;
   @include rem('margin', $global-padding-vertical 0);
+  .intro-content {
+    padding-left: 3rem;
+    border-left: 0.3rem solid $brand-primary;
+  }
 }
 
 .case-studies {
-  .case-studies-intro,
-  .see-website article {
+  .case-studies-intro {
     @include grid-50;
   }
 }
@@ -647,6 +656,26 @@ div[class^='coffee-bean'] {
   @media screen and (min-width: 767px) {
     -ms-grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+.img-container {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  @include transition(transform 0.35s);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: $brand-primary;
   }
 }
 
@@ -695,17 +724,11 @@ div[class^='coffee-bean'] {
 
     .img-container {
       @include transform(scale(1.1));
+      &:before {
+        opacity: 0;
+      }
     }
   }
-}
-
-.img-container {
-  position: relative;
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  @include transition(transform 0.35s);
 }
 
 /* The Modal (background) */

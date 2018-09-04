@@ -1,127 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include head.html %}
-<body ontouchstart="">
+  {% include head.html %}
+  <body ontouchstart="">
   {% include header.html %}
-  <main class="page-content" aria-label="Content">
-    <article class="internal-page case-studies">
-        <section class="intro intro-hero">
-          <div class="wrapper">
-            <div class="article-inner">
-              <header class="intro-header">
-                <h1 class="header">Hikashop Extension</h1>
-              </header>
-              <div class="intro-content">
-              <h2>Create a front end framework for the e-commerce extension used in Joomla CMS. It must be styled and developed to be reused easily and adapt effortlessly to updates and extensions.</h2>
-              </div>
+    <main class="page-content" aria-label="Content">
+      <article class="internal-page">
+        <div class="wrapper">
+
+          <div class="intro">
+            <h1 class="header">Hikashop Extension</h1>
+            <div class="intro-content">
+              <p class="lede">Create a front end framework for the e-commerce extension used in Joomla CMS. It must be styled and developed to be reused easily and adapt effortlessly to updates and extensions.</p>
             </div>
           </div>
-        </section>
 
-        <section class="case-studies">
-          <div class="wrapper">
-            <article class="case-studies-intro">
-              <div class="overview">
-                <p class="small">GOALS</p>
-                <div class="intro-content">
-                  <ul>
-                    <li>Create a visual style and design system that allows the complexity of the cart to be simple to use for any shopper</li>
-                    <li>Write maintainable code that is still capable of overriding unnecessary styles injected by the extension, without sacrificing the structural integrity</li>
-                    <li>Easily change styles and customize based on the client’s needs</li>
-                  </ul>
-                </div>
+          <section class="case-studies">
+            <div class="case-studies-intro">
+              <div class="goals">
+                <h3 class="small">GOALS</h3>
+                <ul>
+                  <li>Create a visual style and design system that allows the complexity of the cart to be simple to use for any shopper</li>
+                  <li>Write maintainable code that is still capable of overriding unnecessary styles injected by the extension, without sacrificing the structural integrity</li>
+                  <li>Easily change styles and customize based on the client’s needs</li>
+                </ul>
               </div>
               <div class="overview">
-                <p class="small">CLIENT</p>
+                <h3 class="small">CLIENT</h3>
                   <div class="intro-content">
                     <p>enCOMPASS Advertising Agengy & Father’s House Ghana</p>
                   </div>
-                <p class="small">RESPONSIBILITIES</p>
-                  <div class="intro-content">
-                    <p>Planning, UI Design, frontend development</p>
-                  </div>
+                <h3 class="small">RESPONSIBILITIES</h3>
+                <p>Planning, UI Design, frontend development</p>
               </div>
-            </article>
+            </div>
+            </section>
           </div>
-        </section>
 
-
-        <section class="projects see-website">
-          <div class="wrapper">
-            <article>
-              <div class="internal-images">
-
+          <section class="see-website">
+            <div class="wrapper">
+              <div class="projects">
+                <div class="internal-images">
                   <img src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535540583/Hikashop-mockup.png" alt="mobile phone and tablet mockup of shopping cart checkout">
-
-              </div>
-              <div class="article-inner">
-                <p class="small">SEE IT IN ACTION</p>
-                <header class="intro-header">
+                </div>
+                <div class="page-content">
+                  <p class="small">SEE IT IN ACTION</p>
                   <h2 class="header">Father's House Ghana</h2>
-                </header>
-
-                <div class="intro-content">
-                  <p>Father’s House Ghana, a non-profit that provides community services and a shelter for rescued child slaves, uses the shopping cart to sell shea butter products to raise funds for their safe haven.</p>
-                  <a href="https://fathershouseghana.org/" target="_blank" class="page-link">view site</a>
+                  <div class="intro-content">
+                    <p>Father’s House Ghana, a non-profit that provides community services and a shelter for rescued child slaves, uses the shopping cart to sell shea butter products to raise funds for their safe haven.</p>
+                    <a href="https://fathershouseghana.org/" target="_blank" class="page-link">view site</a>
+                  </div>
                 </div>
               </div>
+            </div>
+          </section>
 
 
-            </article>
-          </div>
-        </section>
-
-        <section>
-          <article>
-            <div class="wrapper">
-              <div class="article-inner">
-                <header class="intro-header">
-                  <h2 class="header">Planning & Research</h2>
-                </header>
-                  <p>I spent a lot of time looking at the demo version of the extension, deciding on appropriate layouts and features that needed to be part of the foundation. However, when it was time to start creating styles, I learned that Hikashop’s demo site used a custom theme that required an additional purchase. I was left without any plan at this point, and had to start over.</p>
-                  <p>  First thing I noticed was the overwhelming amount of tables and code structures that changed per page, per situation. This caused me to pause and make sure I was able to group similar instances together to target them and provide a foundation of consistency.</p>
-
-
+          <div class="wrapper">
+            <section>
+              <div class="page-content">
+                <h2 class="header">Planning & Research</h2>
+                <p>I spent a lot of time looking at the demo version of the extension, deciding on appropriate layouts and features that needed to be part of the foundation. However, when it was time to start creating styles, I learned that Hikashop’s demo site used a custom theme that required an additional purchase. I was left without any plan at this point, and had to start over.</p>
+                <p>  First thing I noticed was the overwhelming amount of tables and code structures that changed per page, per situation. This caused me to pause and make sure I was able to group similar instances together to target them and provide a foundation of consistency.</p>
                 <p>Besides the actual shopping cart experience, I also had to account for the checkout process and the shopper’s personal account. Account holders will be able to update their preferences, view previous orders, reorder from previous purchases, and even create a cart with orders to save for later.</p>
               </div>
 
-              <div class="article-inner">
-                <header class="intro-header">
-                  <h2 class="header">Design Phase & The Nightmare CSS</h2>
-                </header>
+              <div class="page-content">
+                <h2 class="header">Design Phase & The Nightmare CSS</h2>
                 <p>I was working with both the design and frontend development of this extension, and because the default template came as a surprise, and I ended up working on both at the same time. I also had to work within the confines of the structure, due to regular updates, either adding more functionality or even changing/adding new class names. I knew I had to be more specific with my styles.</p>
                 <p>Overriding the default styles that came with the extension was delicate work. It seemed like there were a lot of quick fixes and very specific code. However, that same structure existed in a different place, so you would think it would be developed the same, but it actually had an entirely different code structure and styles applied to it. Not to mention, the number of importants! that seemed to riddle the code. This left me frustrated and looking for the best way to make a cohesive framework that could still be beautiful and maintainable.</p>
-                  <p>From the design standpoint, I had to go back to basics and make the tables responsive, and find the best way to communicate the right information across all devices. I chose to create a card format that divided the content logically, and visually. I wanted to make sure that shoppers understood what part of the checkout process they were in, and allow important information, such as price, stand out at a glance.</p>
-
+                <p>From the design standpoint, I had to go back to basics and make the tables responsive, and find the best way to communicate the right information across all devices. I chose to create a card format that divided the content logically, and visually. I wanted to make sure that shoppers understood what part of the checkout process they were in, and allow important information, such as price, stand out at a glance.</p>
               </div>
 
-              <div class="article-inner">
-                <header class="intro-header">
-                  <h2 class="header">Frontend Development</h2>
-                </header>
+              <div class="page-content">
+                <h2 class="header">Frontend Development</h2>
                 <p>I mentioned the amount of importants! and inconsistent styling, but it was one thing to create a visual design and another to implement that in the less style sheets. I started with overrides first to get rid of all of the default table styles, and assigned the correct typography mixins to the contents contained within them. After the resets, I needed to create consistent styling for all of the tables.</p>
                 <p>Hikashop also created their own version of Bootstrap-like columns, and I decided to override those because I was afraid in updates they might change the related media queries and I didn’t want to rely on those. On top of that, when we update to Joomla 4 (exclusively using Bootstrap 4), I wanted to make sure moving forward that the framework I implemented would still work when converted from less to scss. I decided to use css grid, with a flex fallback. I was able to put all of the product listing cards, internal product page galleries, and forms into this structure.</p>
                 <div class="internal-images">
-
-                    <img src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535330169/hika-tables.png">
-
+                  <img src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535330169/hika-tables.png">
                 </div>
-            </div>
+              </div>
 
-            <div class="article-inner">
-              <header class="intro-header">
+              <div class="page-content">
                 <h2 class="header">Where it Stands</h2>
-              </header>
                 <p>As of now, everything is still working and none of the updates have affected the styles on the frontend. Any client requesting a shopping cart will now easily be able to have this cart with the available features, and easily update colors, fonts, and additional styles to make it their own unique cart.</p>
-            </div>
+              </div>
+
+          </section>
+          <div class="back-home">
+            <a href="https://www.christinehellman.com" target="_self"><button class="btn-primary">return home</button></a>
           </div>
+        </div>
         </article>
-      </section>
-      <div class="wrapper back-home">
-        <a href="https://www.christinehellman.com" target="_self"><button class="btn-primary">return home</button></a>
-      </div>
-    </article>
-  </main>
+      </main>
 
     {% include footer.html %}
 

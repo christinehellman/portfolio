@@ -4,73 +4,53 @@
   <body ontouchstart="">
   {% include header.html %}
 
-
-
-
     <main class="page-content" aria-label="Content">
 
-    <!--<div class="wrapper site-nav">
-        <nav>
-          <a class="page-link btn js-btn">About</a><a class="page-link btn js-btn">Projects</a><a class="page-link btn js-btn">Contact</a>
-        </nav>
-      </div>-->
-
-
-    <section class="intro-hero">
-      <div class="wrapper">
-        <article>
-          <div class="article-inner">
-
-            <div class="intro-text">
-              <blockquote class="intro-hero-quote">The higher the mountain, the better the view.</blockquote>
-
-              <div class="intro-content">
+      <section class="hero">
+        <div class="wrapper">
+          <div class="intro-hero">
+            <div class="page-content">
+              <div class="intro-text">
+                <blockquote class="intro-hero-quote">The higher the mountain, the better the view.</blockquote>
                 <h1 class="intro-hero-header">I am Christine Hellman & I'm a designer & frontend developer based in Huntersville, NC.</h1>
-                <p>Completely inspired by the challenges design and development bring, I love to problem solve and bring my work to life. </p>
-                <a href="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535680309/chellman-resume-2018.pdf" target="_blank"><button class="btn-primary">resume</button></a>
+                <p>Completely inspired by the challenges design and development bring, I love to problem solve and ideas to life. </p>
+                <a href="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535680309/chellman-resume-2018.pdf" target="_blank">
+                  <button class="btn-primary">resume</button>
+                </a>
               </div>
             </div>
 
+            <div class="hero-intro-svgs">
+              <div class="coffee-bean-1 rellax">
+                {% include coffeebeans/coffee-bean-1.html file="coffee-bean-1.svg"  alt="coffee bean" %}
+              </div>
+              <div class="coffee-bean-2 rellax">
+                {% include coffeebeans/coffee-bean-2.html file="coffee-bean-2.svg"  alt="coffee bean" %}
+              </div>
+              <div class="coffee-bean-3 rellax">
+                {% include coffeebeans/coffee-bean-3.html file="coffee-bean-3.svg"  alt="coffee bean" %}
+              </div>
+              <div class="coffee-bean-4 rellax">
+                {% include coffeebeans/coffee-bean-4.html file="coffee-bean-4.svg"  alt="coffee bean" %}
+              </div>
+              <div class="coffee-bean-5 rellax">
+                {% include coffeebeans/coffee-bean-5.html file="coffee-bean-5.svg"  alt="coffee bean" %}
+              </div>
+              <div class="dogwood">
+                {% include dogwood.html file="dogwood.svg"  alt="dogwood branch" %}
+              </div>
+              <div class="blueberry">
+                {% include blueberry.html file="bluberry.svg"  alt="blueberry bunch" %}
+              </div>
+            </div>
           </div>
-
-          <div class="hero-intro-svgs">
-            <div class="coffee-bean-1 rellax">
-              {% include coffeebeans/coffee-bean-1.html file="coffee-bean-1.svg"  alt="coffee bean" %}
-            </div>
-            <div class="coffee-bean-2 rellax">
-              {% include coffeebeans/coffee-bean-2.html file="coffee-bean-2.svg"  alt="coffee bean" %}
-            </div>
-            <div class="coffee-bean-3 rellax">
-              {% include coffeebeans/coffee-bean-3.html file="coffee-bean-3.svg"  alt="coffee bean" %}
-            </div>
-            <div class="coffee-bean-4 rellax">
-              {% include coffeebeans/coffee-bean-4.html file="coffee-bean-4.svg"  alt="coffee bean" %}
-            </div>
-            <div class="coffee-bean-5 rellax">
-              {% include coffeebeans/coffee-bean-5.html file="coffee-bean-5.svg"  alt="coffee bean" %}
-            </div>
-
-            <div class="dogwood">
-              {% include dogwood.html file="dogwood.svg"  alt="dogwood branch" %}
-
-            </div>
-
-            <div class="blueberry">
-  {% include blueberry.html file="bluberry.svg"  alt="blueberry bunch" %}
-            </div>
-
         </div>
-        </article>
-      </div>
-    </section>
+      </section>
 
 
-    <div class ="work">
-
-
-      <section class="projects">
-
-        <div class="wrapper">
+    <section class="work">
+      <div class="wrapper">
+        <article class="projects">
           <div class="projects-coffee-beans">
             <div class="coffee-bean-2 rellax">
               {% include coffeebeans/coffee-bean-2.html file="coffee-bean-2.svg"  alt="coffee bean" %}
@@ -78,40 +58,30 @@
             <div class="coffee-bean-3 rellax">
               {% include coffeebeans/coffee-bean-3.html file="coffee-bean-3.svg"  alt="coffee bean" %}
             </div>
-
             <div class="coffee-bean-5 rellax">
               {% include coffeebeans/coffee-bean-5.html file="coffee-bean-5.svg"  alt="coffee bean" %}
             </div>
           </div>
-          <article>
-            <a href="/hikashop-extension/" target="_self">
-              <div class="hp-mockup">
-                <img src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535540583/Hikashop-mockup.png" alt="Hikashop styling organization">
 
-              </div>
-            </a>
-            <div class="article-inner rellax">
+          <a href="/hikashop-extension/" target="_self">
+            <div class="hp-mockup">
+              <img src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535540583/Hikashop-mockup.png" alt="Hikashop styling organization">
+            </div>
+          </a>
+            <div class="page-content rellax">
               <h2 class="small">FRONTEND DEVELOPMENT</h2>
-              <header class="intro-header">
-                <h3 class="header">framework for Hikashop extension</h3>
-              </header>
+              <h3 class="project-desc">framework for Hikashop extension</h3>
               <div class="intro-content">
                 <p>A shopping cart framework with code that was flexible but could withstand extension updates and modifications from the client.</p>
                 <a href="/hikashop-extension/" target="_self" class="page-link"><span>see more</span></a>
               </div>
             </div>
           </article>
-        </div>
-      </section>
 
-      <section class="projects">
-        <div class="wrapper">
-          <article>
-            <div class="article-inner rellax">
+          <article class="projects">
+            <div class="page-content rellax">
               <h2 class="small">UI DESIGN & FRONTEND DEVELOPMENT</h2>
-              <header class="intro-header">
-                <h3 class="header">technology and cloud services company</h3>
-              </header>
+              <h3 class="project-desc">technology and cloud services company</h3>
               <div class="intro-content">
                 <p>Featured project focused on videos with a minimal, bright design that includes fun UI interactions.</p>
                 <a href="/sbt-partners/" target="_self" class="page-link">see more</a>
@@ -123,32 +93,27 @@
               </div>
             </a>
           </article>
-        </div>
-      </section>
 
 
 
-      <section class="projects">
-        <div class="wrapper">
-          <div class="projects-coffee-beans">
-            <div class="coffee-bean-2 rellax">
-              {% include coffeebeans/coffee-bean-2.html file="coffee-bean-2.svg"  alt="coffee bean" %}
+          <article class="projects">
+            <div class="projects-coffee-beans">
+              <div class="coffee-bean-2 rellax">
+                {% include coffeebeans/coffee-bean-2.html file="coffee-bean-2.svg"  alt="coffee bean" %}
+              </div>
+              <div class="coffee-bean-3 rellax">
+                {% include coffeebeans/coffee-bean-3.html file="coffee-bean-3.svg"  alt="coffee bean" %}
+              </div>
+              <div class="coffee-bean-5 rellax">
+                {% include coffeebeans/coffee-bean-5.html file="coffee-bean-5.svg"  alt="coffee bean" %}
+              </div>
             </div>
-            <div class="coffee-bean-3 rellax">
-              {% include coffeebeans/coffee-bean-3.html file="coffee-bean-3.svg"  alt="coffee bean" %}
-            </div>
-
-            <div class="coffee-bean-5 rellax">
-              {% include coffeebeans/coffee-bean-5.html file="coffee-bean-5.svg"  alt="coffee bean" %}
-            </div>
-          </div>
-          <article>
             <a href="/all-work/" target="_self">
               <div class="hp-mockup">
                 <img src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535542159/all-work.png" alt="Email preview of additional design work">
               </div>
             </a>
-            <div class="article-inner rellax">
+            <div class="page-content rellax">
               <h2 class="small">SEE ALL WORK</h2>
               <header class="intro-header">
                 <h3 class="header">all.the.things. because I love learning</h3>
@@ -161,9 +126,7 @@
           </article>
         </div>
       </section>
-    </div>
-
-  </main>
+    </main>
 
     {% include footer.html %}
     <!-- <script type="text/javascript" src="assets/javascript.js"></script>-->
