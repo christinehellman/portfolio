@@ -95,7 +95,6 @@ body {
 
 main {
   display: block;
-  /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
 
 .wrapper {
@@ -120,51 +119,10 @@ main {
   }
 }
 
-/**
- * Clearfix
- */
-.wrapper:after,
-.footer-col-wrapper:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-//  s01.03 Tables
-
-table {
-  margin-bottom: 30px;
-  width: 100%;
-  text-align: left;
-  color: #3f3f3f;
-  border-collapse: collapse;
-  border: 1px solid #e8e8e8;
-}
-
-table tr:nth-child(even) {
-  background-color: #f7f7f7;
-}
-
-table th,
-table td {
-  padding: 10px 15px;
-}
-
-table th {
-  background-color: #f0f0f0;
-  border: 1px solid #dedede;
-  border-bottom-color: #c9c9c9;
-}
-
-table td {
-  border: 1px solid #e8e8e8;
-}
-
 //------------------------------------------
 //  s02.00 Images Styles
 //------------------------------------------
 
-//  s02.00 Image
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -175,16 +133,26 @@ figure > img {
 }
 
 // Image styles on case studies layout
-.internal-images {
-  position: relative;
+.internal-callout {
   @include flex;
-  align-items: center;
-  justify-content: center;
+  @include align-items(center);
+  @include justify-content(center);
+  position: relative;
+}
+
+.internal-images {
+  img {
+    @include rem('padding-top', $article-content-padding);
+  }
 }
 
 //------------------------------------------
 //  s03.00 Lists and Other Typography
 //------------------------------------------
+
+.header {
+  @include rem('padding-bottom', $global-padding-horizontal);
+}
 
 //  s03.01 – List formatting
 ul,
@@ -207,8 +175,10 @@ li > ol {
 .small,
 small {
   @include font-small;
+  @include rem('padding-bottom', $line-height-unit);
 }
-small {
+.colophon {
+  @include font-small;
   text-transform: none;
   color: rgba($text-color, 0.6);
   a {
@@ -240,54 +210,8 @@ blockquote > :last-child {
   margin-bottom: 0;
 }
 
-// heading adjust
-.post-title,
-.post-header {
-  font-weight: 400;
-  font-family: $font-family-display;
-  @include rem('padding', $global-padding-horizontal 0);
-}
 .lede {
   @include rem('font-size', $heading-two-size);
-}
-
-// s03.03 - paddding
-
-// overall padding
-.article-inner,
-.page-content,
-.projects {
-  @include rem('padding', $article-content-padding 0);
-  position: relative;
-}
-
-.lede,
-.project-desc {
-  @include rem('padding-bottom', $global-padding-horizontal);
-}
-
-p {
-  @include rem('padding-bottom', $line-height-unit);
-}
-
-// padding for groups of text
-.section-inner {
-  @include rem('padding-bottom', #{$line-height-unit});
-}
-
-.work .projects {
-  @include rem('padding-bottom', 100px);
-}
-
-ul li,
-ol li,
-dl dd {
-  @include rem('padding-bottom', $line-height-unit);
-}
-
-.expertise,
-.footer-bottom-inner {
-  @include rem('padding', $article-content-padding-large 0);
 }
 
 //------------------------------------------
@@ -322,19 +246,13 @@ dl dd {
   }
 }
 
-/*.site-nav .page-link {
-  color: $text-color;
-  line-height: 1.5;
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: $brand-primary;
-    background: transparent;
-  }
-}*/
-
 //  s04.02 Footer
+
+.expertise,
+.footer-bottom-inner {
+  @include rem('padding', $article-content-padding-large 0);
+}
+
 .site-footer {
   background: $bg-light;
 
@@ -416,28 +334,6 @@ button {
   @include btn-primary;
 }
 
-.btn-secondary {
-  //@include btn-secondary;
-}
-
-.btn-tertiary {
-  //@include btn-tertiary;
-}
-
-.post-list > li {
-  margin-bottom: 30px;
-}
-
-.post-meta {
-  font-size: 14px;
-  color: #828282;
-}
-
-.post-link {
-  display: block;
-  font-size: 24px;
-}
-
 .site-link,
 .page-link,
 .site-title {
@@ -476,6 +372,33 @@ button {
 // ------------------------------------------
 // s06.00 Sections
 // ------------------------------------------
+
+// overall padding
+.article-inner,
+.page-content,
+.projects {
+  @include rem('padding', $article-content-padding 0);
+  position: relative;
+}
+
+.lede,
+.project-desc {
+  @include rem('padding-bottom', $global-padding-horizontal);
+}
+
+p {
+  @include rem('padding-bottom', $line-height-unit);
+}
+
+.work .projects {
+  @include rem('padding-bottom', 100px);
+}
+
+ul li,
+ol li,
+dl dd {
+  @include rem('padding-bottom', $line-height-unit);
+}
 
 // s06.01 HP Sections
 main {
@@ -613,10 +536,35 @@ div[class^='coffee-bean'] {
   background: $bg-medium;
   .projects {
     @include grid-50;
+
+    &:hover {
+      .site-link,
+      .page-link {
+        color: $brand-secondary;
+        text-decoration: none;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: $brand-secondary;
+        }
+      }
+    }
   }
 }
 
 // s06.02 Internal Page sections
+
+.internal-page {
+  .intro {
+    @include rem(
+      'padding',
+      $global-padding-vertical 0 $global-padding-horizontal 0
+    );
+  }
+}
 
 // internal pages for case studies
 .see-website {
@@ -637,10 +585,8 @@ div[class^='coffee-bean'] {
 }
 
 // Internal page set up // gallery-category
-.gallery-category {
-  @include rem('padding-bottom', $global-padding-vertical);
-}
-.grid-container {
+
+.gallery {
   @include rem('padding-bottom', $global-padding-vertical)
     /* Grid Fallback is this still needed?*/ @include flex;
   -ms-flex-wrap: wrap;
@@ -654,8 +600,8 @@ div[class^='coffee-bean'] {
 
   // change the rem number to achieve final number of cards in column
   @media screen and (min-width: 767px) {
-    -ms-grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    -ms-grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   }
 }
 
