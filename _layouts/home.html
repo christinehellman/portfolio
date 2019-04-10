@@ -14,7 +14,7 @@
                 <blockquote class="intro-hero-quote">The higher the mountain, the better the view.</blockquote>
                 <h1 class="intro-hero-header">I am Christine Hellman & I'm a designer & frontend developer based in Huntersville, NC.</h1>
                 <p>Completely inspired by the challenges design and development bring, I love to problem solve and ideas to life. </p>
-                <a href="https://res.cloudinary.com/dddf3iwqv/image/upload/v1547566936/chellman-resume-2019.pdf" target="_blank">
+                <a href="https://res.cloudinary.com/dddf3iwqv/image/upload/v1554927364/resume-2019-print.pdf" target="_blank" rel="noopener noreferrer">
                   <button class="btn-primary">resume</button>
                 </a>
               </div>
@@ -108,7 +108,7 @@
                 {% include coffeebeans/coffee-bean-5.html file="coffee-bean-5.svg"  alt="coffee bean" %}
               </div>
             </div>
-            <a href="/all-work/" target="_self">
+            <a href="/design/" target="_self">
               <div class="hp-mockup">
                 <img src="https://res.cloudinary.com/dddf3iwqv/image/upload/v1535542159/all-work.png" alt="Email preview of additional design work">
               </div>
@@ -120,7 +120,7 @@
               </header>
               <div class="intro-content">
                 <p>The rest of my design, development, and creative works.</p>
-                <a href="/all-work/" target="_self" class="page-link"><span><span>see more</span></span></a>
+                <a href="/design/" target="_self" class="page-link"><span><span>see more</span></span></a>
               </div>
             </div>
           </article>
@@ -129,19 +129,16 @@
     </main>
 
     {% include footer.html %}
-    <!-- <script type="text/javascript" src="assets/javascript.js"></script>-->
-          <!-- javascript -->
-    <script type="text/javascript" src="/assets/rellax.js"></script>
     <script>
-    // Also can pass in optional settings block
-var rellax = new Rellax('.rellax', {
-  speed: -2,
-  center: true,
-  wrapper: null,
-  round: true,
-  vertical: true,
-  horizontal: false
-});
-</script>
+      let rellax = new Rellax('.rellax', {
+        speed: -2,
+        center: true,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false
+      });
+    </script>
+    
   </body>
 </html>
